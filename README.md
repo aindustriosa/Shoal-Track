@@ -3,6 +3,7 @@ Es un sistema de monitorización de regatas para barcos radiocontrol
 
 ## ¿De donde sale la idea?
 La empresa MarineInstruments realiza cada año una RegataSolar de barcos alimentados por energia solar en donde los colegios de bachillerato y los centros de Formacion Profesional pueden participar.
+
 El Centro Tecnologico del Mar (CETMAR), creo una primera version para la II RegataSolar, cediendo este desarrollo a la asociacion A Industriosa para que lo mantenga en las futuras ediciones.
 
 ## ¿Para que esta diseñado?
@@ -22,6 +23,9 @@ El sistema esta desarrollado por la asociación A Industriosa, de manera colabor
 
 ## ¿Qué licencia tiene?
 Como el sistema tiene tres partes bien diferenciadas, se gestionaran las licencias de uso de manera separada.
+
 Para la parte hardware, una licencia CC-By-SA4.0 para asegurar que los avances sobre el hardware derivado se puedan rehutilizar
+
 Para la parte de la gestion: una licencia permisiva, para fomentar (si se diese el caso) del uso del backend por parte de otras organizaciones.
+
 Para la parte de aplicación: una licencia puramente GPL para proteger el trabajo mas llamativo y "de marca".

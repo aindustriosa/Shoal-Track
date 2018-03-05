@@ -1,0 +1,18 @@
+id,name,category,acronym
+1,DC Team,6,ASRS03
+2,Montecastelo Racing,0,ASRS05
+3,Los apanados,1,ASRS04
+4,Iluminados del Caribe,6,ASRS06
+5,Hogar_1,6,ASRS07
+6,Hogar_2,1,ASRS08
+7,Os Secos,0,ASRS01
+8,Naverga,0,ASRS02
+9,MarineDor,1,ASRS09
+10,Vehiculo_Test_01,0,ASRS10
+11,Vehiculo_Test_02,1,ASRS11
+12,VirtualMarkBuoy 01,100,VMRK01
+13,VirtualMarkBuoy 02,100,VMRK02
+14,RaceMarkBuoy 01,101,RMRK01
+15,RaceMarkBuoy 02,101,RMRK02
+16,RaceMarkBuoy 03,101,RMRK03
+17,GatewayMark 01,102,GTWN01
