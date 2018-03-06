@@ -1,0 +1,134 @@
+html, body, .gral {
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			
+}
+		  
+#map {
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+		  
+	
+.header {
+	z-index: 100;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: white;
+	background: rgba(252, 252, 255, 0.85);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 2 px;
+	position: absolute;
+	width: 100%;
+	height: 10%;
+	padding-top: 5px;
+}
+
+.graphic {
+	z-index: 100;
+	width: 100%;
+	padding: 16px 18px;
+	background: rgba(236, 245, 255, 0.85);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 2 px;
+	position: absolute;
+	bottom: 0;
+    height: 10%;
+}
+
+#cetmar {
+	width:325px;
+	height: 82px;
+	float: right;
+    margin-right: 25px;
+}
+
+#marine {
+	width:116px;
+	height: 69px;
+	float: left;
+    margin-left: 25px;
+}
+
+.table {
+	position: absolute;
+    float: right;
+    right: 0!important;
+    left: auto!important;
+    width: 30%;
+    border-bottom-left-radius: 0;
+    transition: height 256ms linear 0s,width 256ms linear 0s,background 256ms linear 1024ms;
+	background: rgba(236, 245, 247,0);
+	height: 80%;
+	top: 10%;
+	justify-content: center;
+	display: flex;
+	
+}
+
+button {
+	height: 10%;
+	width: 50%;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+	font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #008CBA;
+	position: absolute;
+	margin-top: 15px;
+}
+
+.titulo{
+	text-align: left;
+	font-family: Open Sans; 
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.table_tittle{
+	text-align: center;
+	font-family: Open Sans; 
+	font-size: 25px;
+	font-weight: bold;
+	background-color: #E1EAF2;
+	display: block;
+	margin: auto;
+}
+
+#chartContainer {
+	height: 20%;
+	width: 100%;
+}
+
+#variables {
+	position: absolute;
+    right: 25px;
+	font-family: Open Sans; 
+	font-size: 16px;
+}
+
+.leaflet-popup-content-wrapper {
+  background:#59799A;
+  color:#fff;
+  font-size:16px;
+  line-height:24px;
+  border-radius: 0px;
+  
+  }
+
+  /* Formato de los barcos*/
+
+.svg-inject {
+  fill: 'blue';
+}
+	

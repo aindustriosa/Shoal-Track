@@ -1,0 +1,24 @@
+{% extends "base-1col.html" %}
+
+{% block content %}
+
+<!--  script para el activado de ventanas emergentes -->
+    <script language="javascript" type="text/javascript">
+        function activity_popup(url) {
+        newwindow=window.open(url,'{{title}}','height=1000,width=1024,scrollbars=1');
+        if (window.focus) {newwindow.focus()}
+        return false;
+        }
+    </script>
+    
+<h1>Modificar Calibracion</h1>
+{{ device.name|safe }}
+{{ device.image_tag|safe }}
+<form method="POST" class="post-form">{% csrf_token %}
+   {{ calibration.as_p }}
+   <button type="submit" class="save btn btn-default">Save</button>
+</form>
+
+<img src="{{graphic|safe}}">
+        
+{% endblock %}

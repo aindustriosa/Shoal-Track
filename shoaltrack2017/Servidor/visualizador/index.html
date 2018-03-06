@@ -1,0 +1,144 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset= "UTF-8"/>
+	<title>II Regata Solar Marine Instruments</title>
+	<link rel="shortcut icon" href="images/icon_regata.png"/>
+		
+	<!--css---->
+	<link rel="stylesheet" href="js/lib/leaflet/leaflet.css"/>
+
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all"/>
+	<link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css" media="all"/>
+	<link href="css/compass.css" rel="stylesheet" type="text/css"/>
+	<link href="css/normalize.css" rel="stylesheet" type="text/css"/>
+	<link href="css/googleapis.css" rel="stylesheet" type="text/css"/>
+	<link href="css/tabulator.css" rel="stylesheet" type="text/css"/>
+	<link href="css/index.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+
+<!-- Map Element and Ranking
+================================================= -->
+
+<div id="pral">
+	<div class="header">
+		<div class="row">
+			<div class="col-md-1 col-md-4 col-sm-2"><img src="images/icon_regata_trans.png" id="regata" alt="Regata Marine"> </div>
+			<div class="col-md-2 col-md-4 col-sm-2"><button id="boton">SHOW</button></div>
+			<div class="col-md-6 col-md-8 col-sm-8"><h1 class='titulo' id="carrera">II Regata Solar Marine Instruments</h1></div>
+			<div class="col-md-3 hidden-md hidden-sm"><img src="images/logos_trans.png" id="logos" alt="Cetmar&Marine"></div>
+		</div>
+	</div>
+
+	<div id="map" class="container"></div>
+	
+	<div id="reloj" class="clock" style="visibility:hidden">
+		<ul class="countdown">
+			<li> <span id="days" class="days">00</span>
+				<p class="days_ref">days</p>
+			</li>
+			<li class="seperator">.</li>
+			<li> <span class="hours">00</span>
+				<p class="hours_ref">hours</p>
+			</li>
+			<li class="seperator">:</li>
+			<li> <span class="minutes">00</span>
+				<p class="minutes_ref">minutes</p>
+			</li>
+			<li class="seperator">:</li>
+			<li> <span class="seconds">00</span>
+				<p class="seconds_ref">seconds</p>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="rosa_vientos" class="compass" style="display:none">
+	  <div id="viento" class="direction">
+	</div>
+		<div id="direccion" class="arrow"></div>
+	</div>
+	
+	<div id="zoom" style="display:none">
+		<img id="lupa" src="images/zoom.png" 
+				onmouseover="this.src='images/zoom_azul.png';"
+                onmouseout="this.src='images/zoom.png';"
+				/>
+	</div>
+	
+	<div id="ranking" class="tabla">
+    <table id="tablaRanking" border="1" style="display:none">
+        <thead>
+            <tr class="cuerpo" >
+                <th class="anim:update"></th>
+				<th class="anim:update anim:position">Ranking</th>
+				<th class="anim:id">Embarcación</th>
+				<th style="display:none;" class="anim:update anim:sort anim:number">Puntuacion</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+	</div>
+	
+	
+	<div  id="chartContainer" class="graphic lead" style="visibility:hidden">
+		<div id= "selector">
+       		<div>
+				 <select id="variable" class="selector">
+					<option  class="opciones" value="velocidad">Velocidad (m/s)</option>
+					<option  class="opciones" value="posicion">Posición</option>
+					<option  class="opciones" value="power">Potencia consumida (W)</option>
+					
+				 </select>
+			</div>
+		</div>
+		<div><canvas id="grafico"></canvas></div>
+	</div>
+		
+</div>
+	
+<!--Ajax-->
+<script src="js/lib/jquery-3.1.0.min.js"></script>
+<!-- Scripts jquery- -->
+	<!-- <script src="js/jquery-2.2.4.min.js"></script> -->
+	<!-- <script src="js/jquery-ui.min.js"></script> -->
+<!--Leaflet-->	
+	<script src="js/lib/leaflet/leaflet.js"></script>
+	<script src="js/lib/leaflet/leaflet.label.js"></script>
+	<script src="js/lib/leaflet/leaflet.boatmarker.min.js"></script>
+	<!--Rotation angle script-->
+	<script type="text/javascript" src="js/lib/leaflet/leaflet.rotatedMarker.js"></script>
+<!--Capas javascript y archivos-->
+	<script type="text/javascript" src="data/linea_costa.js"></script>
+<!--turf-->	
+	<script type="text/javascript" src="js/lib/turf.min.js"></script>	
+<!--Tablas Pablo -->
+	<script src="js/lib/animator.js"></script>
+	<script src="js/lib/sorttables.js"></script>
+	<script src="js/lib/rankingTableUpdate.js"></script>
+	<script src="js/lib/tables.js"></script>
+<!--Scripts Tabulator-->	
+	<!-- <script type="text/javascript" src="js/lib/tabulator.js"></script> -->
+<!--Scripts gráficas-->	
+	<script src="js/lib/Chart.min.js"></script>
+
+
+<!--Cuenta atrás-->
+	<script type="text/javascript" src="js/lib/jquery.downCount.js"></script>
+<!--Javascript Index (propio)-->
+	<script type="text/javascript" src="js/index.js"></script>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+

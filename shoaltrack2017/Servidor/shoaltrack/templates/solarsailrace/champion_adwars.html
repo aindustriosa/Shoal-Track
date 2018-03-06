@@ -1,0 +1,20 @@
+{% extends "base-1col.html" %}
+
+{% block content %}
+<h1>Listado de Organizaciones participantes</h1>
+<!-- tabla de datos devices -->
+    <table class="table_descript" >
+        <tr>
+           {% for item in content.races %}
+              <th class='cabezera'>{{ item|safe }}</th>
+           {% endfor %}
+        </tr>
+        {% for device in content.points %}
+           <tr>
+            {% for item in device %}
+              <th >{{ item|safe }}</th>
+            {% endfor %}
+           </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

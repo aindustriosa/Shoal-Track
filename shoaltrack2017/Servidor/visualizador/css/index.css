@@ -1,0 +1,255 @@
+html, body, .gral {
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			
+}
+		  
+#map {
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+	  
+.header {
+	z-index: 100;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: white;
+	background: rgba(252, 252, 255, 0.85);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 2 px;
+	position: absolute;
+	width: 100%;
+	height: 95px;
+	padding: 5px;
+}
+
+.graphic {
+	z-index: 100;
+	width: 100%;
+	padding: 16px 18px;
+	background: rgba(236, 245, 255, 0.85);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 2 px;
+	position: absolute;
+	bottom: 0;
+    height: 10%;
+}
+
+#logos {
+	width:354px;
+	height: 64px;
+	float: right;
+    margin-right: 15px;
+	margin-top: 15px;
+}
+
+
+#regata{
+	width:90px;
+	height:90px;
+}
+
+/* Tabla de ranking */
+
+.tabla {
+	position: absolute;
+    float: left;
+    left: 15px!important;
+    width: 30%;
+    border-bottom-left-radius: 0;
+   	top: 15%;
+	
+}
+
+
+.cuerpo{
+	color: white;
+	/* font-size: 16px; */
+
+}
+
+
+th {
+	
+	padding: 5px;
+	opacity: 0.8;
+	font-size: 16px;
+	text-align: center;
+}
+
+td{
+    font-size: 14px;
+	font-weight: bold;
+	padding-top: 7px;
+	padding-right: 7px;
+	padding-bottom: 7px;
+	padding-left: 7px;
+	text-align: center;	
+}
+
+thead{
+	background-color: rgb(35, 58, 98);
+}
+
+tbody{
+	background-color: #deebf7;
+}
+
+
+/* Botón inicio */
+
+button {
+	height: 50px;
+	width: 50%;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+	font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #233a62;
+	position: absolute;
+	margin-top: 15px;
+}
+
+
+#zoom{	
+    display: block;
+    position: absolute;
+    bottom: 20%;
+    left: 50px;
+	margin-bottom: 10px;
+	}
+	
+#lupa{
+	height: 40px;
+	width: 40px;
+}
+
+.titulo{
+	margin-top: 10px;
+	text-align: left;
+	/*font-size: 40px;*/
+	font-weight: 600;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	font-family: monospace;
+	font-family: cursive;
+	font-family: fantasy;
+	color: #233a62;
+	
+
+}	
+	
+
+.table_tittle{
+	text-align: center;
+	font-family: Open Sans; 
+	font-size: 25px;
+	font-weight: bold;
+	background-color: #E1EAF2;
+	display: block;
+	margin: auto;
+}
+
+#chartContainer {
+	height: 20%;
+	width: 100%;
+}
+
+#selector {
+	position: absolute;
+    right: 25px;
+	font-family: Open Sans; 
+	font-size: 16px;
+}
+
+.leaflet-popup-content-wrapper {
+  background:#59799A;
+  color:#fff;
+  font-size:16px;
+  line-height:24px;
+  border-radius: 0px;
+  }
+
+  /* Formato de los barcos*/
+
+.svg-inject {
+  fill: 'blue';
+}
+
+
+/*Formato del reloj*/
+
+.clock {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-left: -350px;
+   	width: 700px;
+	height: 150px;
+	color: white;
+	font: normal 12px 'Open Sans', sans-serif;
+	margin-top: 20px;
+	}
+
+ul.countdown {
+list-style: none;
+margin: 75px 0;
+padding: 0;
+display: block;
+text-align: center;
+}
+ul.countdown li {
+display: inline-block;
+}
+ul.countdown li span {
+font-size: 100px;
+font-weight: 300;
+line-height: 80px;
+}
+ul.countdown li.seperator {
+font-size: 80px;
+line-height: 70px;
+vertical-align: top;
+}
+ul.countdown li p {
+font-size: 14px;
+}
+.color{
+	width: 35px;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+@media all and (max-width: 1400px){
+    h1 {
+        font-size: 18px;
+    }
+}
+
+@media all and (max-width: 1300px){
+    h1 {
+        font-size: 35px;
+    }
+}
+@media all and (max-width: 1100px){
+    h1 {
+        font-size: 25px;
+    }
+}
+@media all and (max-width: 1000px){
+    .cl-titulo {
+        display: none;
+    }
+}
+

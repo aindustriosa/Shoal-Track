@@ -1,0 +1,25 @@
+ 
+Sistema de ficheros en RAM para alto flujo de escritura-lectura:
+tmpfs es el nombre que recibe un sistema de almacenamiento en muchos sistemas operativos de tipo Unix. Aparece como un sistema de archivos montado aunque usa memoria volátil [RAM]. Es similar a los discos RAM, que aparecen como discos virtuales, y pueden contener sistemas de archivos.
+
+NOTA IMPORTANTE:
+tmpfs normalmente también usa espacio de intercambio en situaciones en las que hay poca memoria volátil disponible. Y la SWAP es en realidad DiscoHD.
+
+Se utilizara por tanto el direcorio /mnt/ramdisk/shoaltrack
+
+You can add the mount entry into /etc/fstab to make the RAM disk persist over reboots. 
+tmpfs       /mnt/ramdisk tmpfs   nodev,nosuid,noexec,nodiratime,size=50M   0 0
+
+root@pepino2:/etc# df -h
+S.ficheros           Tamaño Usados  Disp Uso% Montado en
+udev                    12G      0   12G   0% /dev
+tmpfs                  2,4G   9,3M  2,4G   1% /run
+/dev/sda1               59G    21G   38G  36% /
+tmpfs                   12G      0   12G   0% /dev/shm
+tmpfs                  5,0M   4,0K  5,0M   1% /run/lock
+tmpfs                   12G      0   12G   0% /sys/fs/cgroup
+/dev/sda2              171G    69G  103G  41% /home
+tmpfs                  2,4G    12K  2,4G   1% /run/user/1000
+//server03/datos       3,7T   838G  2,9T  23% /mnt/server03
+//server00/Programas   1,0T   485G  540G  48% /mnt/server00
+tmpfs                   50M      0   50M   0% /mnt/ramdisk

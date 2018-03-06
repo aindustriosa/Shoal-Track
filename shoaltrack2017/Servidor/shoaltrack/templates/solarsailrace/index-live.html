@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset= "UTF-8"/>
+	<title>II Regata Solar Radio Control 2017</title>
+	<link rel="shortcut icon" href="images/cetmar_logo.ico"/>
+		
+	<!--Leaflet css---->
+	<link rel="stylesheet" type="text/css" href="css/leaflet.css"/>
+		
+	<!--Bootstrap y otros css---->
+	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/bootstrap-theme.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/normalize.css" rel="stylesheet" type="text/css"  />
+	<link href="css/index.css" rel="stylesheet" type="text/css"  />
+	<link href="css/tabulator.css" rel="stylesheet" type="text/css"  />
+	<!--Ajax-->
+	<script src="js/jquery.min.js"></script>	
+	<!--Scripts jquery-->	
+	<script src="js/jquery-2.2.4.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+</head>
+
+<body>
+
+
+<!-- Map Element and Ranking
+================================================= -->
+
+<div>		
+	
+	<div id="map" class="container"></div>
+	
+	<div class="header">
+		<div class="row">
+		<div class="col-sm-2"><img src="images/marine_logo.png" id="marine" alt="CETMAR"> </div>	
+		<div class="col-sm-6"><h2 class='titulo'>II Regata RC Solar Marine Instruments<h2></div>
+		<div class="col-sm-4"><img src="images/cetmar.gif" id="cetmar" alt="Marine Instruments"> </div>		  
+		  
+		</div>
+	</div>
+	
+	<div  id="chartContainer" class="graphic lead">
+		<div id= "variables">
+       		<div id="selector1">
+				 <select id="miSelector" onchange="seleccionar()" class="selector">
+					<option class="opciones" value="seleccionar"></option>
+					<option class="opciones" value="ranking">Posición</option>
+					<option  class="opciones" value="potencia">Potencia consumida (W)</option>
+					<option  class="opciones" value="velocidad">Velocidad (m/s)</option>
+				 </select>
+			</div>
+
+		</div>
+		<canvas id="graficas"></canvas>
+	</div>
+	
+	<div class="table lead">
+		<button onclick="intervalos()">MOSTRAR CARRERA</button>
+		<table id="example-table" border="1"></table>
+	</div>
+	
+</div>
+	
+
+
+
+<!-- Graphics
+================================================= -->
+
+
+<!--Leaflet-->	
+	<script src="js/leaflet.js"></script>
+<!--Capas javascript y archivos-->
+	<script type="text/javascript" src="data/linea_costa.js"></script>
+    <!-- <script type="text/javascript" src="data/geojson_file.js"></script>	 --> -->
+	<script type="text/javascript" src="data/grafica.js"></script>	
+<!--Script de marcadores personalizados-->
+	<script src="https://rawgithub.com/jseppi/Leaflet.MakiMarkers/master/Leaflet.MakiMarkers.js"></script>
+<!--Capas que vamos a utilizar-->
+	<script src="https://rawgithub.com/jseppi/Leaflet.MakiMarkers/master/Leaflet.MakiMarkers.js"></script>
+	
+<!--turf-->	
+	<script type="text/javascript" src="js/turf.min.js"></script>	
+
+<!--Scripts Tabulator-->	
+	<script type="text/javascript" src="js/tabulator.js"></script>
+<!--Scripts gráficas-->	
+	<script type="text/javascript" src="js/charts.js"></script>	
+<!--Javascript Index (propio)-->
+	<script type="text/javascript" src="js/index.js"></script>	
+</body>
+</html>
+
+
+
+
+
+
+
+
+

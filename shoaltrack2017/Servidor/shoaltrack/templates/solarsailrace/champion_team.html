@@ -1,0 +1,54 @@
+{% extends "base-1col.html" %}
+
+{% block content %}
+<h1>Listado de Organizaciones participantes</h1>
+<!-- tabla de datos devices -->
+    <table class="table_descript" >
+        {% for row in content.teams %}
+            <tr>
+            <th rowspan="3">{{ row.img|safe }}</th>
+            <th class='cabezera' >{{ row.acro|safe }}<br></th>
+            <th class='cabezera' colspan="2">{{ row.name|safe }}</th>
+            <th>{{ row.country|safe }}</th>
+            </tr>
+            <tr>
+            <td colspan="4">{{ row.descript|safe }}</td>
+            </tr>
+        <tr>
+            <td>Telefono: {{ row.telephone|safe }}</td>
+            <td>Correo-e: {{ row.email|safe }}</td>
+            <td>Webpage: {{ row.web|safe }}</td>
+            <td>Calado:{{ row.draft|safe }} </td>
+        </tr>
+        <tr>
+            <td colspan="5">team</td>
+        </tr>
+        <tr>
+        {% for item in row.team1 %}
+            <td>{{ item.img|safe }}</br>
+            {{ item.name|safe }}</br>
+            {{ item.email|safe }}</br>
+            {{ item.rol|safe }}</br>
+            {{ item.enable|safe }}</br>
+            {{ item.disable|safe }}
+            </td>
+        {% endfor %}
+        </tr>
+        <tr>
+        {% for item in row.team2 %}
+            <td>{{ item.img|safe }}</br>
+            {{ item.name|safe }}</br>
+            {{ item.email|safe }}</br>
+            {{ item.rol|safe }}</br>
+            {{ item.enable|safe }}</br>
+            {{ item.disable|safe }}
+            </td>
+        {% endfor %}
+        </tr>
+        <tr>
+            <td class='separador' colspan="5"></td>
+        </tr>
+        {% endfor %}
+        
+    </table>
+{% endblock %}
