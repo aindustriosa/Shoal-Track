@@ -1,0 +1,1419 @@
+*** Starting uWSGI 2.0.14-debian (64bit) on [Mon Jun 19 19:02:24 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+writing pidfile to /tmp/shoaltrack-master.pid
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address :8001 fd 3
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!
+no request plugin is loaded, you will not be able to manage requests.
+you may need to install the package for your language of choice, or simply load it with --plugin.
+!!!!!!!!!!! END OF WARNING !!!!!!!!!!
+spawned uWSGI master process (pid: 6801)
+spawned uWSGI worker 1 (pid: 6802, cores: 2)
+spawned uWSGI worker 2 (pid: 6803, cores: 2)
+spawned uWSGI worker 3 (pid: 6806, cores: 2)
+spawned uWSGI worker 4 (pid: 6808, cores: 2)
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+*** Starting uWSGI 2.0.14-debian (64bit) on [Mon Jun 19 19:03:28 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+writing pidfile to /tmp/shoaltrack-master.pid
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:8001).
+bind(): Address already in use [core/socket.c line 769]
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+*** Starting uWSGI 2.0.14-debian (64bit) on [Mon Jun 19 19:18:42 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+writing pidfile to /tmp/shoaltrack-master.pid
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+probably another instance of uWSGI is running on the same address (:8001).
+bind(): Address already in use [core/socket.c line 769]
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/www-data/shoaltrack
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (:8001)
+running /usr/bin/uwsgi-core
+[uWSGI] getting INI configuration from /home/www-data/shoaltrack/shoaltrack-uwsgi-tcp.ini
+*** Starting uWSGI 2.0.14-debian (64bit) on [Mon Jun 19 19:20:28 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address :8001 fd 3
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!
+no request plugin is loaded, you will not be able to manage requests.
+you may need to install the package for your language of choice, or simply load it with --plugin.
+!!!!!!!!!!! END OF WARNING !!!!!!!!!!
+gracefully (RE)spawned uWSGI master process (pid: 6801)
+spawned uWSGI worker 1 (pid: 7591, cores: 2)
+spawned uWSGI worker 2 (pid: 7592, cores: 2)
+spawned uWSGI worker 3 (pid: 7594, cores: 2)
+spawned uWSGI worker 4 (pid: 7596, cores: 2)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/www-data/shoaltrack
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (:8001)
+running /usr/bin/uwsgi-core
+[uWSGI] getting INI configuration from /home/www-data/shoaltrack/shoaltrack-uwsgi-tcp.ini
+*** Starting uWSGI 2.0.14-debian (64bit) on [Mon Jun 19 19:20:40 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address :8001 fd 3
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!
+no request plugin is loaded, you will not be able to manage requests.
+you may need to install the package for your language of choice, or simply load it with --plugin.
+!!!!!!!!!!! END OF WARNING !!!!!!!!!!
+gracefully (RE)spawned uWSGI master process (pid: 6801)
+spawned uWSGI worker 1 (pid: 7603, cores: 2)
+spawned uWSGI worker 2 (pid: 7604, cores: 2)
+spawned uWSGI worker 3 (pid: 7606, cores: 2)
+spawned uWSGI worker 4 (pid: 7608, cores: 2)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/www-data/shoaltrack
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (:8001)
+running /usr/bin/uwsgi-core
+[uWSGI] getting INI configuration from /home/www-data/shoaltrack/shoaltrack-uwsgi-tcp.ini
+*** Starting uWSGI 2.0.14-debian (64bit) on [Mon Jun 19 19:20:46 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address :8001 fd 3
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!
+no request plugin is loaded, you will not be able to manage requests.
+you may need to install the package for your language of choice, or simply load it with --plugin.
+!!!!!!!!!!! END OF WARNING !!!!!!!!!!
+gracefully (RE)spawned uWSGI master process (pid: 6801)
+spawned uWSGI worker 1 (pid: 7613, cores: 2)
+spawned uWSGI worker 2 (pid: 7614, cores: 2)
+spawned uWSGI worker 3 (pid: 7616, cores: 2)
+spawned uWSGI worker 4 (pid: 7618, cores: 2)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/www-data/shoaltrack
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (:8001)
+running /usr/bin/uwsgi-core
+[uWSGI] getting INI configuration from /home/www-data/shoaltrack/shoaltrack-uwsgi-tcp.ini
+*** Starting uWSGI 2.0.14-debian (64bit) on [Mon Jun 19 19:20:48 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address :8001 fd 3
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!
+no request plugin is loaded, you will not be able to manage requests.
+you may need to install the package for your language of choice, or simply load it with --plugin.
+!!!!!!!!!!! END OF WARNING !!!!!!!!!!
+gracefully (RE)spawned uWSGI master process (pid: 6801)
+spawned uWSGI worker 1 (pid: 7623, cores: 2)
+spawned uWSGI worker 2 (pid: 7624, cores: 2)
+spawned uWSGI worker 3 (pid: 7626, cores: 2)
+spawned uWSGI worker 4 (pid: 7628, cores: 2)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/www-data/shoaltrack
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (:8001)
+running /usr/bin/uwsgi-core
+[uWSGI] getting INI configuration from /home/www-data/shoaltrack/shoaltrack-uwsgi-tcp.ini
+*** Starting uWSGI 2.0.14-debian (64bit) on [Mon Jun 19 19:20:49 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address :8001 fd 3
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!
+no request plugin is loaded, you will not be able to manage requests.
+you may need to install the package for your language of choice, or simply load it with --plugin.
+!!!!!!!!!!! END OF WARNING !!!!!!!!!!
+gracefully (RE)spawned uWSGI master process (pid: 6801)
+spawned uWSGI worker 1 (pid: 7633, cores: 2)
+spawned uWSGI worker 2 (pid: 7634, cores: 2)
+spawned uWSGI worker 3 (pid: 7636, cores: 2)
+spawned uWSGI worker 4 (pid: 7638, cores: 2)
+...brutally killing workers...
+worker 2 buried after 0 seconds
+worker 3 buried after 0 seconds
+worker 1 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/www-data/shoaltrack
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (:8001)
+running /usr/bin/uwsgi-core
+[uWSGI] getting INI configuration from /home/www-data/shoaltrack/shoaltrack-uwsgi-tcp.ini
+*** Starting uWSGI 2.0.14-debian (64bit) on [Mon Jun 19 19:20:51 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address :8001 fd 3
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!
+no request plugin is loaded, you will not be able to manage requests.
+you may need to install the package for your language of choice, or simply load it with --plugin.
+!!!!!!!!!!! END OF WARNING !!!!!!!!!!
+gracefully (RE)spawned uWSGI master process (pid: 6801)
+spawned uWSGI worker 1 (pid: 7643, cores: 2)
+spawned uWSGI worker 2 (pid: 7644, cores: 2)
+spawned uWSGI worker 3 (pid: 7646, cores: 2)
+spawned uWSGI worker 4 (pid: 7648, cores: 2)
+...brutally killing workers...
+worker 2 buried after 0 seconds
+worker 3 buried after 0 seconds
+worker 1 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/www-data/shoaltrack
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (:8001)
+running /usr/bin/uwsgi-core
+[uWSGI] getting INI configuration from /home/www-data/shoaltrack/shoaltrack-uwsgi-tcp.ini
+*** Starting uWSGI 2.0.14-debian (64bit) on [Mon Jun 19 19:20:52 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address :8001 fd 3
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!
+no request plugin is loaded, you will not be able to manage requests.
+you may need to install the package for your language of choice, or simply load it with --plugin.
+!!!!!!!!!!! END OF WARNING !!!!!!!!!!
+gracefully (RE)spawned uWSGI master process (pid: 6801)
+spawned uWSGI worker 1 (pid: 7653, cores: 2)
+spawned uWSGI worker 2 (pid: 7654, cores: 2)
+spawned uWSGI worker 3 (pid: 7656, cores: 2)
+spawned uWSGI worker 4 (pid: 7658, cores: 2)
+...brutally killing workers...
+worker 1 buried after 0 seconds
+worker 2 buried after 0 seconds
+worker 3 buried after 0 seconds
+worker 4 buried after 0 seconds
+binary reloading uWSGI...
+chdir() to /home/www-data/shoaltrack
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (:8001)
+running /usr/bin/uwsgi-core
+[uWSGI] getting INI configuration from /home/www-data/shoaltrack/shoaltrack-uwsgi-tcp.ini
+*** Starting uWSGI 2.0.14-debian (64bit) on [Mon Jun 19 19:23:15 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address :8001 fd 3
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!
+no request plugin is loaded, you will not be able to manage requests.
+you may need to install the package for your language of choice, or simply load it with --plugin.
+!!!!!!!!!!! END OF WARNING !!!!!!!!!!
+gracefully (RE)spawned uWSGI master process (pid: 6801)
+spawned uWSGI worker 1 (pid: 8739, cores: 2)
+spawned uWSGI worker 2 (pid: 8740, cores: 2)
+spawned uWSGI worker 3 (pid: 8741, cores: 2)
+spawned uWSGI worker 4 (pid: 8742, cores: 2)
+*** Starting uWSGI 2.0.14-debian (64bit) on [Tue Jun 20 10:05:15 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+writing pidfile to /tmp/shoaltrack-master.pid
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/www-data/shoaltrack.sock fd 3
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!
+no request plugin is loaded, you will not be able to manage requests.
+you may need to install the package for your language of choice, or simply load it with --plugin.
+!!!!!!!!!!! END OF WARNING !!!!!!!!!!
+spawned uWSGI master process (pid: 2390)
+spawned uWSGI worker 1 (pid: 2391, cores: 2)
+spawned uWSGI worker 2 (pid: 2392, cores: 2)
+spawned uWSGI worker 3 (pid: 2394, cores: 2)
+spawned uWSGI worker 4 (pid: 2396, cores: 2)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: pidfile removed.
+VACUUM: unix socket /home/www-data/shoaltrack.sock removed.
+*** Starting uWSGI 2.0.14-debian (64bit) on [Tue Jun 20 10:09:17 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+writing pidfile to /tmp/shoaltrack-master.pid
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/www-data/shoaltrack.sock fd 3
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+*** no app loaded. going in full dynamic mode ***
+*** uWSGI is running in multiple interpreter mode ***
+!!!!!!!!!!!!!! WARNING !!!!!!!!!!!!!!
+no request plugin is loaded, you will not be able to manage requests.
+you may need to install the package for your language of choice, or simply load it with --plugin.
+!!!!!!!!!!! END OF WARNING !!!!!!!!!!
+spawned uWSGI master process (pid: 12191)
+spawned uWSGI worker 1 (pid: 12192, cores: 2)
+spawned uWSGI worker 2 (pid: 12193, cores: 2)
+spawned uWSGI worker 3 (pid: 12195, cores: 2)
+spawned uWSGI worker 4 (pid: 12197, cores: 2)
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+-- unavailable modifier requested: 0 --
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: pidfile removed.
+VACUUM: unix socket /home/www-data/shoaltrack.sock removed.
+*** Starting uWSGI 2.0.14-debian (64bit) on [Tue Jun 20 10:23:07 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+writing pidfile to /tmp/shoaltrack-master.pid
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/www-data/shoaltrack.sock fd 3
+Python version: 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
+Python main interpreter initialized at 0x55d53a18e980
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55d53a18e980 pid: 12298 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 12298)
+spawned uWSGI worker 1 (pid: 12303, cores: 2)
+spawned uWSGI worker 2 (pid: 12305, cores: 2)
+spawned uWSGI worker 3 (pid: 12307, cores: 2)
+spawned uWSGI worker 4 (pid: 12309, cores: 2)
+Not Found: /shoaltrack
+[pid: 12303|app: 0|req: 1/1] 192.168.0.149 () {40 vars in 737 bytes} [Tue Jun 20 08:24:02 2017] GET /shoaltrack => generated 2622 bytes in 180 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Not Found: /shoaltrack/admin
+[pid: 12309|app: 0|req: 1/2] 192.168.0.149 () {40 vars in 749 bytes} [Tue Jun 20 08:24:12 2017] GET /shoaltrack/admin => generated 2640 bytes in 197 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 12305|app: 0|req: 1/3] 192.168.0.149 () {40 vars in 749 bytes} [Tue Jun 20 08:28:58 2017] GET /shoaltrack/admin => generated 0 bytes in 216 msecs (HTTP/1.1 301) 2 headers in 104 bytes (1 switches on core 0)
+[pid: 12305|app: 0|req: 2/4] 192.168.0.149 () {40 vars in 751 bytes} [Tue Jun 20 08:28:59 2017] GET /shoaltrack/admin/ => generated 14428 bytes in 112 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 1)
+[pid: 12305|app: 0|req: 3/5] 192.168.0.149 () {40 vars in 775 bytes} [Tue Jun 20 08:29:40 2017] GET /shoaltrack/device/ASRS07/edit => generated 0 bytes in 2 msecs (HTTP/1.1 301) 2 headers in 117 bytes (1 switches on core 0)
+[pid: 12305|app: 0|req: 4/6] 192.168.0.149 () {40 vars in 777 bytes} [Tue Jun 20 08:29:40 2017] GET /shoaltrack/device/ASRS07/edit/ => generated 19482 bytes in 79 msecs (HTTP/1.1 200) 4 headers in 256 bytes (1 switches on core 0)
+SIGINT/SIGQUIT received...killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+VACUUM: pidfile removed.
+VACUUM: unix socket /home/www-data/shoaltrack.sock removed.
+*** Starting uWSGI 2.0.14-debian (64bit) on [Tue Jun 20 10:31:55 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+writing pidfile to /tmp/shoaltrack-master.pid
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/www-data/shoaltrack.sock fd 3
+Python version: 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
+Python main interpreter initialized at 0x556293d5b880
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x556293d5b880 pid: 12449 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 12449)
+spawned uWSGI worker 1 (pid: 12454, cores: 2)
+spawned uWSGI worker 2 (pid: 12456, cores: 2)
+spawned uWSGI worker 3 (pid: 12458, cores: 2)
+spawned uWSGI worker 4 (pid: 12460, cores: 2)
+[pid: 12456|app: 0|req: 1/1] 192.168.0.149 () {40 vars in 777 bytes} [Tue Jun 20 08:31:58 2017] GET /shoaltrack/device/ASRS07/edit/ => generated 19537 bytes in 275 msecs (HTTP/1.1 200) 4 headers in 256 bytes (1 switches on core 0)
+Internal Server Error: /shoaltrack/device/ASRS07/edit/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+KeyError: 'media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 42, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./devices/views.py", line 59, in edit
+    'tableCalibrt':tableCalibrt})
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 208, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 201, in render
+    template = context.template.engine.get_template(template_name)
+  File "/usr/lib/python3/dist-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/lib/python3/dist-packages/django/template/engine.py", line 134, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/lib/python3/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 233, in compile_nodelist
+    return parser.parse()
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 574, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 6: 'media'. Did you forget to register or load this tag?
+[pid: 12456|app: 0|req: 2/2] 192.168.0.149 () {42 vars in 808 bytes} [Tue Jun 20 08:34:00 2017] GET /shoaltrack/device/ASRS07/edit/ => generated 182871 bytes in 148 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 1)
+Internal Server Error: /shoaltrack/device/ASRS07/edit/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 510, in parse
+    compile_func = self.tags[command]
+KeyError: 'media'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 42, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3/dist-packages/django/contrib/auth/decorators.py", line 23, in _wrapped_view
+    return view_func(request, *args, **kwargs)
+  File "./devices/views.py", line 59, in edit
+    'tableCalibrt':tableCalibrt})
+  File "/usr/lib/python3/dist-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/lib/python3/dist-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 208, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 201, in render
+    template = context.template.engine.get_template(template_name)
+  File "/usr/lib/python3/dist-packages/django/template/engine.py", line 160, in get_template
+    template, origin = self.find_template(template_name)
+  File "/usr/lib/python3/dist-packages/django/template/engine.py", line 134, in find_template
+    name, template_dirs=dirs, skip=skip,
+  File "/usr/lib/python3/dist-packages/django/template/loaders/base.py", line 44, in get_template
+    contents, origin, origin.template_name, self.engine,
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 191, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 233, in compile_nodelist
+    return parser.parse()
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 512, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 574, in invalid_block_tag
+    "or load this tag?" % (token.lineno, command)
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 7: 'media'. Did you forget to register or load this tag?
+[pid: 12456|app: 0|req: 3/3] 192.168.0.149 () {42 vars in 808 bytes} [Tue Jun 20 08:34:31 2017] GET /shoaltrack/device/ASRS07/edit/ => generated 184060 bytes in 114 msecs (HTTP/1.1 500) 3 headers in 106 bytes (1 switches on core 0)
+[pid: 12456|app: 0|req: 4/4] 192.168.0.149 () {42 vars in 808 bytes} [Tue Jun 20 08:36:27 2017] GET /shoaltrack/device/ASRS07/edit/ => generated 19560 bytes in 89 msecs (HTTP/1.1 200) 4 headers in 256 bytes (1 switches on core 1)
+...brutally killing workers...
+Gracefully killing worker 3 (pid: 12458)...
+Gracefully killing worker 1 (pid: 12454)...
+Gracefully killing worker 2 (pid: 12456)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/www-data/shoaltrack
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/www-data/shoaltrack.sock)
+running /usr/bin/uwsgi-core
+[uWSGI] getting INI configuration from /home/www-data/shoaltrack/shoaltrack-uwsgi-tcp.ini
+*** Starting uWSGI 2.0.14-debian (64bit) on [Tue Jun 20 09:36:58 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/www-data/shoaltrack.sock fd 3
+Python version: 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
+Python main interpreter initialized at 0x5589829bc0b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x5589829bc0b0 pid: 12449 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 12449)
+spawned uWSGI worker 1 (pid: 22907, cores: 2)
+spawned uWSGI worker 2 (pid: 22909, cores: 2)
+spawned uWSGI worker 3 (pid: 22911, cores: 2)
+spawned uWSGI worker 4 (pid: 22913, cores: 2)
+*** Starting uWSGI 2.0.14-debian (64bit) on [Wed Jun 21 13:30:23 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+writing pidfile to /tmp/shoaltrack-master.pid
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/www-data/shoaltrack.sock fd 3
+Python version: 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
+Python main interpreter initialized at 0x558dfdf5a880
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x558dfdf5a880 pid: 4152 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 4152)
+spawned uWSGI worker 1 (pid: 4157, cores: 2)
+spawned uWSGI worker 2 (pid: 4159, cores: 2)
+spawned uWSGI worker 3 (pid: 4161, cores: 2)
+spawned uWSGI worker 4 (pid: 4163, cores: 2)
+[pid: 4159|app: 0|req: 1/1] 192.168.0.149 () {40 vars in 737 bytes} [Wed Jun 21 11:30:31 2017] GET /shoaltrack => generated 0 bytes in 304 msecs (HTTP/1.1 301) 2 headers in 98 bytes (1 switches on core 0)
+[pid: 4159|app: 0|req: 2/2] 192.168.0.149 () {40 vars in 739 bytes} [Wed Jun 21 11:30:31 2017] GET /shoaltrack/ => generated 3311 bytes in 27 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 1)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/www-data/shoaltrack
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/www-data/shoaltrack.sock)
+running /usr/bin/uwsgi-core
+[uWSGI] getting INI configuration from /home/www-data/shoaltrack/shoaltrack-uwsgi-tcp.ini
+*** Starting uWSGI 2.0.14-debian (64bit) on [Wed Jun 21 12:11:02 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/www-data/shoaltrack.sock fd 3
+Python version: 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
+Python main interpreter initialized at 0x5650c4bd30b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5650c4bd30b0 pid: 4152 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 4152)
+spawned uWSGI worker 1 (pid: 4382, cores: 2)
+spawned uWSGI worker 2 (pid: 4384, cores: 2)
+spawned uWSGI worker 3 (pid: 4386, cores: 2)
+spawned uWSGI worker 4 (pid: 4388, cores: 2)
+*** Starting uWSGI 2.0.14-debian (64bit) on [Sun Jun 25 09:35:20 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+writing pidfile to /tmp/shoaltrack-master.pid
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/www-data/shoaltrack.sock fd 3
+Python version: 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
+Python main interpreter initialized at 0x5639d6707eb0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5639d6707eb0 pid: 1239 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1239)
+spawned uWSGI worker 1 (pid: 1244, cores: 2)
+spawned uWSGI worker 2 (pid: 1246, cores: 2)
+spawned uWSGI worker 3 (pid: 1248, cores: 2)
+spawned uWSGI worker 4 (pid: 1250, cores: 2)
+[pid: 1250|app: 0|req: 1/1] 127.0.0.1 () {38 vars in 608 bytes} [Sun Jun 25 07:35:42 2017] GET /shoaltrack/admin => generated 0 bytes in 182 msecs (HTTP/1.1 301) 2 headers in 104 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 2/2] 127.0.0.1 () {38 vars in 610 bytes} [Sun Jun 25 07:35:43 2017] GET /shoaltrack/admin/ => generated 0 bytes in 76 msecs (HTTP/1.1 302) 7 headers in 314 bytes (1 switches on core 1)
+[pid: 1250|app: 0|req: 3/3] 127.0.0.1 () {38 vars in 669 bytes} [Sun Jun 25 07:35:43 2017] GET /shoaltrack/admin/login/?next=/shoaltrack/admin/ => generated 1719 bytes in 31 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 4/4] 127.0.0.1 () {46 vars in 955 bytes} [Sun Jun 25 07:36:05 2017] POST /shoaltrack/admin/login/?next=/shoaltrack/admin/ => generated 0 bytes in 64 msecs (HTTP/1.1 302) 9 headers in 569 bytes (1 switches on core 1)
+[pid: 1248|app: 0|req: 1/5] 127.0.0.1 () {42 vars in 823 bytes} [Sun Jun 25 07:36:05 2017] GET /shoaltrack/admin/ => generated 11889 bytes in 282 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 5/6] 127.0.0.1 () {42 vars in 849 bytes} [Sun Jun 25 07:36:12 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 58644 bytes in 151 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1248|app: 0|req: 2/7] 127.0.0.1 () {42 vars in 775 bytes} [Sun Jun 25 07:36:13 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 22 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1250|app: 0|req: 6/8] 127.0.0.1 () {42 vars in 849 bytes} [Sun Jun 25 07:36:23 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 58625 bytes in 167 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1250|app: 0|req: 7/9] 127.0.0.1 () {42 vars in 821 bytes} [Sun Jun 25 07:36:24 2017] GET /shoaltrack/admin/ => generated 11889 bytes in 29 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 8/10] 127.0.0.1 () {42 vars in 827 bytes} [Sun Jun 25 07:36:26 2017] GET /shoaltrack/admin/competition/race/ => generated 6896 bytes in 77 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1250|app: 0|req: 9/11] 127.0.0.1 () {42 vars in 764 bytes} [Sun Jun 25 07:36:26 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 10/12] 127.0.0.1 () {42 vars in 862 bytes} [Sun Jun 25 07:36:30 2017] GET /shoaltrack/admin/competition/race/1/change/ => generated 81002 bytes in 189 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1250|app: 0|req: 11/13] 127.0.0.1 () {42 vars in 773 bytes} [Sun Jun 25 07:36:30 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 12/14] 127.0.0.1 () {40 vars in 795 bytes} [Sun Jun 25 07:36:57 2017] GET /shoaltrack/admin/competition/race/1/change/ => generated 81002 bytes in 199 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1250|app: 0|req: 13/15] 127.0.0.1 () {42 vars in 773 bytes} [Sun Jun 25 07:36:58 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 14/16] 127.0.0.1 () {40 vars in 795 bytes} [Sun Jun 25 07:37:09 2017] GET /shoaltrack/admin/competition/race/1/change/ => generated 81002 bytes in 182 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1248|app: 0|req: 3/17] 127.0.0.1 () {42 vars in 773 bytes} [Sun Jun 25 07:37:09 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 15/18] 127.0.0.1 () {40 vars in 765 bytes} [Sun Jun 25 07:37:21 2017] GET /shoaltrack/admin/competition => generated 0 bytes in 1 msecs (HTTP/1.1 301) 2 headers in 116 bytes (1 switches on core 0)
+[pid: 1248|app: 0|req: 4/19] 127.0.0.1 () {40 vars in 767 bytes} [Sun Jun 25 07:37:21 2017] GET /shoaltrack/admin/competition/ => generated 5841 bytes in 27 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 1)
+[pid: 1248|app: 0|req: 5/20] 127.0.0.1 () {42 vars in 839 bytes} [Sun Jun 25 07:37:25 2017] GET /shoaltrack/admin/competition/race/ => generated 6896 bytes in 41 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1248|app: 0|req: 6/21] 127.0.0.1 () {42 vars in 764 bytes} [Sun Jun 25 07:37:25 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1250|app: 0|req: 16/22] 127.0.0.1 () {42 vars in 862 bytes} [Sun Jun 25 07:37:27 2017] GET /shoaltrack/admin/competition/race/1/change/ => generated 81002 bytes in 186 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1246|app: 0|req: 1/23] 127.0.0.1 () {42 vars in 773 bytes} [Sun Jun 25 07:37:27 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 198 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 17/24] 127.0.0.1 () {46 vars in 1096 bytes} [Sun Jun 25 07:38:40 2017] POST /shoaltrack/admin/competition/race/1/change/ => generated 0 bytes in 91 msecs (HTTP/1.1 302) 8 headers in 603 bytes (1 switches on core 1)
+[pid: 1250|app: 0|req: 18/25] 127.0.0.1 () {42 vars in 1133 bytes} [Sun Jun 25 07:38:40 2017] GET /shoaltrack/admin/competition/race/1/change/ => generated 81244 bytes in 185 msecs (HTTP/1.1 200) 8 headers in 489 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 19/26] 127.0.0.1 () {42 vars in 773 bytes} [Sun Jun 25 07:38:40 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1250|app: 0|req: 20/27] 127.0.0.1 () {46 vars in 1096 bytes} [Sun Jun 25 07:43:14 2017] POST /shoaltrack/admin/competition/race/1/change/ => generated 0 bytes in 95 msecs (HTTP/1.1 302) 8 headers in 603 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 21/28] 127.0.0.1 () {42 vars in 1133 bytes} [Sun Jun 25 07:43:14 2017] GET /shoaltrack/admin/competition/race/1/change/ => generated 81244 bytes in 180 msecs (HTTP/1.1 200) 8 headers in 489 bytes (1 switches on core 1)
+[pid: 1248|app: 0|req: 7/29] 127.0.0.1 () {42 vars in 773 bytes} [Sun Jun 25 07:43:14 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1248|app: 0|req: 8/30] 127.0.0.1 () {40 vars in 743 bytes} [Sun Jun 25 07:46:28 2017] GET /shoaltrack/admin/ => generated 12527 bytes in 32 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 1)
+[pid: 1250|app: 0|req: 22/31] 127.0.0.1 () {42 vars in 849 bytes} [Sun Jun 25 07:46:30 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 58705 bytes in 140 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1248|app: 0|req: 9/32] 127.0.0.1 () {42 vars in 775 bytes} [Sun Jun 25 07:46:30 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 23/33] 127.0.0.1 () {42 vars in 663 bytes} [Sun Jun 25 07:48:33 2017] GET /shoaltrack/admin/ => generated 0 bytes in 2 msecs (HTTP/1.1 302) 7 headers in 314 bytes (1 switches on core 1)
+[pid: 1250|app: 0|req: 24/34] 127.0.0.1 () {42 vars in 722 bytes} [Sun Jun 25 07:48:33 2017] GET /shoaltrack/admin/login/?next=/shoaltrack/admin/ => generated 1719 bytes in 15 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1246|app: 0|req: 2/35] 127.0.0.1 () {44 vars in 880 bytes} [Sun Jun 25 07:58:05 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 58806 bytes in 275 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1248|app: 0|req: 10/36] 127.0.0.1 () {44 vars in 806 bytes} [Sun Jun 25 07:58:05 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+Not Found: /shoaltrack/admin/device
+[pid: 1250|app: 0|req: 25/37] 127.0.0.1 () {40 vars in 755 bytes} [Sun Jun 25 07:59:07 2017] GET /shoaltrack/admin/device => generated 8853 bytes in 13 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 1248|app: 0|req: 11/38] 127.0.0.1 () {40 vars in 757 bytes} [Sun Jun 25 07:59:12 2017] GET /shoaltrack/admin/devices => generated 0 bytes in 1 msecs (HTTP/1.1 301) 2 headers in 112 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 26/39] 127.0.0.1 () {40 vars in 759 bytes} [Sun Jun 25 07:59:12 2017] GET /shoaltrack/admin/devices/ => generated 2872 bytes in 24 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 27/40] 127.0.0.1 () {42 vars in 831 bytes} [Sun Jun 25 07:59:14 2017] GET /shoaltrack/admin/devices/device/ => generated 14603 bytes in 50 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1250|app: 0|req: 28/41] 127.0.0.1 () {42 vars in 762 bytes} [Sun Jun 25 07:59:14 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+Not Found: /shoaltrack/admin/race
+[pid: 1250|app: 0|req: 29/42] 127.0.0.1 () {40 vars in 751 bytes} [Sun Jun 25 07:59:45 2017] GET /shoaltrack/admin/race => generated 8847 bytes in 13 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+Not Found: /shoaltrack/admin/races/
+[pid: 1248|app: 0|req: 12/43] 127.0.0.1 () {40 vars in 755 bytes} [Sun Jun 25 07:59:49 2017] GET /shoaltrack/admin/races/ => generated 8853 bytes in 10 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 1248|app: 0|req: 13/44] 127.0.0.1 () {40 vars in 743 bytes} [Sun Jun 25 07:59:55 2017] GET /shoaltrack/admin/ => generated 12527 bytes in 33 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 1)
+[pid: 1250|app: 0|req: 30/45] 127.0.0.1 () {42 vars in 849 bytes} [Sun Jun 25 08:03:35 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 58997 bytes in 193 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 31/46] 127.0.0.1 () {42 vars in 775 bytes} [Sun Jun 25 08:03:35 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1248|app: 0|req: 14/47] 127.0.0.1 () {44 vars in 880 bytes} [Sun Jun 25 08:03:37 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 58997 bytes in 148 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 32/48] 127.0.0.1 () {44 vars in 806 bytes} [Sun Jun 25 08:03:37 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 33/49] 127.0.0.1 () {42 vars in 901 bytes} [Sun Jun 25 08:03:42 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/1560/change/ => generated 299321 bytes in 5154 msecs (HTTP/1.1 200) 7 headers in 405 bytes (2 switches on core 1)
+[pid: 1250|app: 0|req: 34/50] 127.0.0.1 () {42 vars in 787 bytes} [Sun Jun 25 08:03:47 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 35/51] 127.0.0.1 () {42 vars in 901 bytes} [Sun Jun 25 08:03:47 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/1560/change/ => generated 299321 bytes in 4997 msecs (HTTP/1.1 200) 7 headers in 405 bytes (2 switches on core 1)
+[pid: 1250|app: 0|req: 36/52] 127.0.0.1 () {42 vars in 787 bytes} [Sun Jun 25 08:03:52 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1250|app: 0|req: 37/53] 127.0.0.1 () {44 vars in 880 bytes} [Sun Jun 25 08:03:57 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 59034 bytes in 145 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1250|app: 0|req: 38/54] 127.0.0.1 () {44 vars in 806 bytes} [Sun Jun 25 08:03:57 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+...brutally killing workers...
+Gracefully killing worker 3 (pid: 1248)...
+Gracefully killing worker 1 (pid: 1244)...
+Gracefully killing worker 2 (pid: 1246)...
+Gracefully killing worker 4 (pid: 1250)...
+                                                                                                                                                                                                                                                                                                                                                                        *** Starting uWSGI 2.0.14-debian (64bit) on [Sun Jun 25 10:41:00 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+writing pidfile to /tmp/shoaltrack-master.pid
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /home/www-data/shoaltrack.sock fd 3
+Python version: 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
+Python main interpreter initialized at 0x55ea961dc020
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55ea961dc020 pid: 1156 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1156)
+spawned uWSGI worker 1 (pid: 1161, cores: 2)
+spawned uWSGI worker 2 (pid: 1163, cores: 2)
+spawned uWSGI worker 3 (pid: 1165, cores: 2)
+spawned uWSGI worker 4 (pid: 1167, cores: 2)
+[pid: 1167|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 743 bytes} [Sun Jun 25 08:44:00 2017] GET /shoaltrack/admin/ => generated 12527 bytes in 337 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 2/2] 127.0.0.1 () {42 vars in 827 bytes} [Sun Jun 25 08:44:07 2017] GET /shoaltrack/admin/competition/race/ => generated 6896 bytes in 47 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 3/3] 127.0.0.1 () {42 vars in 764 bytes} [Sun Jun 25 08:44:07 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 4/4] 127.0.0.1 () {42 vars in 862 bytes} [Sun Jun 25 08:44:09 2017] GET /shoaltrack/admin/competition/race/3/change/ => generated 59528 bytes in 151 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1165|app: 0|req: 1/5] 127.0.0.1 () {42 vars in 773 bytes} [Sun Jun 25 08:44:09 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 200 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 5/6] 127.0.0.1 () {40 vars in 795 bytes} [Sun Jun 25 08:44:25 2017] GET /shoaltrack/admin/competition/race/3/change/ => generated 59528 bytes in 182 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1165|app: 0|req: 2/7] 127.0.0.1 () {42 vars in 773 bytes} [Sun Jun 25 08:44:25 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 6/8] 127.0.0.1 () {46 vars in 1094 bytes} [Sun Jun 25 08:46:17 2017] POST /shoaltrack/admin/competition/race/3/change/ => generated 0 bytes in 72 msecs (HTTP/1.1 302) 8 headers in 605 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 7/9] 127.0.0.1 () {42 vars in 1135 bytes} [Sun Jun 25 08:46:17 2017] GET /shoaltrack/admin/competition/race/3/change/ => generated 59772 bytes in 144 msecs (HTTP/1.1 200) 8 headers in 489 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 8/10] 127.0.0.1 () {42 vars in 773 bytes} [Sun Jun 25 08:46:17 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 9/11] 127.0.0.1 () {40 vars in 795 bytes} [Sun Jun 25 08:50:23 2017] GET /shoaltrack/admin/competition/race/3/change/ => generated 59528 bytes in 260 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 10/12] 127.0.0.1 () {42 vars in 773 bytes} [Sun Jun 25 08:50:23 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 11/13] 127.0.0.1 () {40 vars in 743 bytes} [Sun Jun 25 08:51:50 2017] GET /shoaltrack/admin/ => generated 12848 bytes in 35 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 12/14] 127.0.0.1 () {42 vars in 823 bytes} [Sun Jun 25 08:51:55 2017] GET /shoaltrack/admin/devices/device/ => generated 14603 bytes in 83 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1163|app: 0|req: 1/15] 127.0.0.1 () {42 vars in 762 bytes} [Sun Jun 25 08:51:56 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 295 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 13/16] 127.0.0.1 () {42 vars in 858 bytes} [Sun Jun 25 08:51:58 2017] GET /shoaltrack/admin/devices/device/17/change/ => generated 18989 bytes in 66 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 14/17] 127.0.0.1 () {42 vars in 772 bytes} [Sun Jun 25 08:51:58 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 15/18] 127.0.0.1 () {42 vars in 834 bytes} [Sun Jun 25 08:52:17 2017] GET /shoaltrack/admin/devices/ => generated 2872 bytes in 48 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 1165|app: 0|req: 3/19] 127.0.0.1 () {42 vars in 837 bytes} [Sun Jun 25 08:52:19 2017] GET /shoaltrack/admin/devices/teamtrace/ => generated 13379 bytes in 201 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1165|app: 0|req: 4/20] 127.0.0.1 () {42 vars in 765 bytes} [Sun Jun 25 08:52:19 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1165|app: 0|req: 5/21] 127.0.0.1 () {42 vars in 811 bytes} [Sun Jun 25 08:52:27 2017] GET /shoaltrack/admin/ => generated 12848 bytes in 59 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 16/22] 127.0.0.1 () {42 vars in 837 bytes} [Sun Jun 25 08:52:42 2017] GET /shoaltrack/admin/competition/trackgeom/ => generated 21596 bytes in 129 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1165|app: 0|req: 6/23] 127.0.0.1 () {42 vars in 769 bytes} [Sun Jun 25 08:52:42 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 17/24] 127.0.0.1 () {42 vars in 877 bytes} [Sun Jun 25 08:52:49 2017] GET /shoaltrack/admin/competition/trackgeom/8/change/ => generated 13891 bytes in 55 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 18/25] 127.0.0.1 () {42 vars in 778 bytes} [Sun Jun 25 08:52:49 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 19/26] 127.0.0.1 () {44 vars in 908 bytes} [Sun Jun 25 08:54:11 2017] GET /shoaltrack/admin/competition/trackgeom/8/change/ => generated 13891 bytes in 58 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 20/27] 127.0.0.1 () {44 vars in 809 bytes} [Sun Jun 25 08:54:11 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 21/28] 127.0.0.1 () {42 vars in 663 bytes} [Sun Jun 25 08:55:43 2017] GET /shoaltrack/admin/ => generated 0 bytes in 8 msecs (HTTP/1.1 302) 7 headers in 314 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 22/29] 127.0.0.1 () {42 vars in 722 bytes} [Sun Jun 25 08:55:43 2017] GET /shoaltrack/admin/login/?next=/shoaltrack/admin/ => generated 1719 bytes in 20 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 23/30] 127.0.0.1 () {40 vars in 743 bytes} [Sun Jun 25 08:55:44 2017] GET /shoaltrack/admin/ => generated 12848 bytes in 40 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 24/31] 127.0.0.1 () {42 vars in 849 bytes} [Sun Jun 25 08:55:46 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 58958 bytes in 278 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1161|app: 0|req: 1/32] 127.0.0.1 () {42 vars in 775 bytes} [Sun Jun 25 08:55:47 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 258 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 25/33] 127.0.0.1 () {42 vars in 901 bytes} [Sun Jun 25 08:55:49 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/4647/change/ => generated 299334 bytes in 7712 msecs (HTTP/1.1 200) 7 headers in 405 bytes (2 switches on core 0)
+[pid: 1167|app: 0|req: 26/34] 127.0.0.1 () {42 vars in 787 bytes} [Sun Jun 25 08:55:57 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 27/35] 127.0.0.1 () {42 vars in 853 bytes} [Sun Jun 25 09:13:26 2017] GET /shoaltrack/admin/competition/race/ => generated 6899 bytes in 49 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 28/36] 127.0.0.1 () {42 vars in 764 bytes} [Sun Jun 25 09:13:27 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 29/37] 127.0.0.1 () {42 vars in 862 bytes} [Sun Jun 25 09:13:28 2017] GET /shoaltrack/admin/competition/race/4/change/ => generated 102607 bytes in 339 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 30/38] 127.0.0.1 () {42 vars in 773 bytes} [Sun Jun 25 09:13:29 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 31/39] 127.0.0.1 () {46 vars in 1100 bytes} [Sun Jun 25 09:19:19 2017] POST /shoaltrack/admin/competition/race/4/change/ => generated 0 bytes in 183 msecs (HTTP/1.1 302) 8 headers in 607 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 32/40] 127.0.0.1 () {42 vars in 1137 bytes} [Sun Jun 25 09:19:20 2017] GET /shoaltrack/admin/competition/race/4/change/ => generated 102853 bytes in 433 msecs (HTTP/1.1 200) 8 headers in 489 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 33/41] 127.0.0.1 () {42 vars in 773 bytes} [Sun Jun 25 09:19:21 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1165|app: 0|req: 7/42] 127.0.0.1 () {42 vars in 833 bytes} [Sun Jun 25 09:20:01 2017] GET /shoaltrack/admin/ => generated 13171 bytes in 57 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 34/43] 127.0.0.1 () {42 vars in 843 bytes} [Sun Jun 25 09:20:12 2017] GET /shoaltrack/admin/competition/racetracking/ => generated 22359 bytes in 90 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 35/44] 127.0.0.1 () {42 vars in 772 bytes} [Sun Jun 25 09:20:13 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 36/45] 127.0.0.1 () {40 vars in 743 bytes} [Sun Jun 25 09:47:01 2017] GET /shoaltrack/admin/ => generated 13171 bytes in 46 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 37/46] 127.0.0.1 () {42 vars in 849 bytes} [Sun Jun 25 09:47:04 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 58617 bytes in 178 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 38/47] 127.0.0.1 () {42 vars in 775 bytes} [Sun Jun 25 09:47:04 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 39/48] 127.0.0.1 () {42 vars in 901 bytes} [Sun Jun 25 09:47:07 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/9247/change/ => generated 299313 bytes in 6559 msecs (HTTP/1.1 200) 7 headers in 405 bytes (2 switches on core 0)
+[pid: 1167|app: 0|req: 40/49] 127.0.0.1 () {42 vars in 787 bytes} [Sun Jun 25 09:47:14 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 41/50] 127.0.0.1 () {42 vars in 849 bytes} [Sun Jun 25 09:47:16 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 58653 bytes in 156 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 42/51] 127.0.0.1 () {42 vars in 901 bytes} [Sun Jun 25 09:47:18 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/9267/change/ => generated 299336 bytes in 6738 msecs (HTTP/1.1 200) 7 headers in 405 bytes (2 switches on core 1)
+[pid: 1167|app: 0|req: 43/52] 127.0.0.1 () {42 vars in 787 bytes} [Sun Jun 25 09:47:25 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 44/53] 127.0.0.1 () {42 vars in 818 bytes} [Sun Jun 25 09:55:28 2017] GET /shoaltrack/admin/ => generated 13171 bytes in 49 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 45/54] 127.0.0.1 () {42 vars in 849 bytes} [Sun Jun 25 09:55:33 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 58788 bytes in 281 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 46/55] 127.0.0.1 () {42 vars in 775 bytes} [Sun Jun 25 09:55:34 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 47/56] 127.0.0.1 () {44 vars in 880 bytes} [Sun Jun 25 10:09:11 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 59317 bytes in 196 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 48/57] 127.0.0.1 () {44 vars in 806 bytes} [Sun Jun 25 10:09:11 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 13 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1165|app: 0|req: 8/58] 127.0.0.1 () {44 vars in 880 bytes} [Sun Jun 25 10:09:30 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 59314 bytes in 197 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 1)
+[pid: 1165|app: 0|req: 9/59] 127.0.0.1 () {44 vars in 806 bytes} [Sun Jun 25 10:09:30 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 49/60] 127.0.0.1 () {44 vars in 880 bytes} [Sun Jun 25 10:15:44 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 59431 bytes in 265 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 50/61] 127.0.0.1 () {44 vars in 806 bytes} [Sun Jun 25 10:15:44 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 18 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 51/62] 127.0.0.1 () {44 vars in 880 bytes} [Sun Jun 25 10:16:29 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 59427 bytes in 143 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 52/63] 127.0.0.1 () {44 vars in 806 bytes} [Sun Jun 25 10:16:29 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 53/64] 127.0.0.1 () {44 vars in 880 bytes} [Sun Jun 25 10:16:51 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 59423 bytes in 264 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1167|app: 0|req: 54/65] 127.0.0.1 () {44 vars in 806 bytes} [Sun Jun 25 10:16:51 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+[pid: 1167|app: 0|req: 55/66] 127.0.0.1 () {44 vars in 880 bytes} [Sun Jun 25 10:16:52 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 59423 bytes in 278 msecs (HTTP/1.1 200) 7 headers in 405 bytes (1 switches on core 0)
+[pid: 1165|app: 0|req: 10/67] 127.0.0.1 () {44 vars in 806 bytes} [Sun Jun 25 10:16:52 2017] GET /shoaltrack/admin/jsi18n/ => generated 3189 bytes in 11 msecs (HTTP/1.1 200) 3 headers in 93 bytes (1 switches on core 1)
+Internal Server Error: /shoaltrack/admin/telemetrydata/devicedataraw/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/models/options.py", line 617, in get_field
+    return self.fields_map[field_name]
+KeyError: 'latitude'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/utils.py", line 274, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/utils.py", line 308, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "/usr/lib/python3/dist-packages/django/db/models/options.py", line 619, in get_field
+    raise FieldDoesNotExist('%s has no field named %r' % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: DeviceDataRaw has no field named 'latitude'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 42, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/usr/lib/python3/dist-packages/django/template/response.py", line 109, in render
+    self.content = self.rendered_content
+  File "/usr/lib/python3/dist-packages/django/template/response.py", line 86, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 208, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/library.py", line 225, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 339, in result_list
+    'results': list(results(cl))}
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 315, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 306, in __init__
+    super(ResultList, self).__init__(*items)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 217, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/utils.py", line 290, in lookup_field
+    value = attr()
+  File "./telemetrydata/models/measurement.py", line 105, in latitude
+    if self.geom.geom_type == 'Point':
+AttributeError: 'NoneType' object has no attribute 'geom_type'
+[pid: 1167|app: 0|req: 56/68] 127.0.0.1 () {44 vars in 880 bytes} [Sun Jun 25 10:22:16 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 336791 bytes in 247 msecs (HTTP/1.1 500) 4 headers in 260 bytes (2 switches on core 1)
+Internal Server Error: /shoaltrack/admin/telemetrydata/devicedataraw/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/models/options.py", line 617, in get_field
+    return self.fields_map[field_name]
+KeyError: 'latitude'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/utils.py", line 274, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/utils.py", line 308, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "/usr/lib/python3/dist-packages/django/db/models/options.py", line 619, in get_field
+    raise FieldDoesNotExist('%s has no field named %r' % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: DeviceDataRaw has no field named 'latitude'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 42, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/usr/lib/python3/dist-packages/django/template/response.py", line 109, in render
+    self.content = self.rendered_content
+  File "/usr/lib/python3/dist-packages/django/template/response.py", line 86, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 208, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/library.py", line 225, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 339, in result_list
+    'results': list(results(cl))}
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 315, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 306, in __init__
+    super(ResultList, self).__init__(*items)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 217, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/utils.py", line 290, in lookup_field
+    value = attr()
+  File "./telemetrydata/models/measurement.py", line 105, in latitude
+    if self.geom.geom_type == 'Point':
+AttributeError: 'NoneType' object has no attribute 'geom_type'
+[pid: 1167|app: 0|req: 57/69] 127.0.0.1 () {44 vars in 880 bytes} [Sun Jun 25 10:22:19 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 336791 bytes in 251 msecs (HTTP/1.1 500) 4 headers in 260 bytes (2 switches on core 0)
+Internal Server Error: /shoaltrack/admin/telemetrydata/devicedataraw/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/models/options.py", line 617, in get_field
+    return self.fields_map[field_name]
+KeyError: 'latitude'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/utils.py", line 274, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/utils.py", line 308, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "/usr/lib/python3/dist-packages/django/db/models/options.py", line 619, in get_field
+    raise FieldDoesNotExist('%s has no field named %r' % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: DeviceDataRaw has no field named 'latitude'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 42, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/usr/lib/python3/dist-packages/django/template/response.py", line 109, in render
+    self.content = self.rendered_content
+  File "/usr/lib/python3/dist-packages/django/template/response.py", line 86, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 208, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/library.py", line 225, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 339, in result_list
+    'results': list(results(cl))}
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 315, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 306, in __init__
+    super(ResultList, self).__init__(*items)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 217, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/utils.py", line 290, in lookup_field
+    value = attr()
+  File "./telemetrydata/models/measurement.py", line 105, in latitude
+    if self.geom.geom_type == 'Point':
+AttributeError: 'NoneType' object has no attribute 'geom_type'
+[pid: 1167|app: 0|req: 58/70] 127.0.0.1 () {40 vars in 799 bytes} [Sun Jun 25 10:22:38 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 336502 bytes in 194 msecs (HTTP/1.1 500) 4 headers in 260 bytes (2 switches on core 1)
+[pid: 1167|app: 0|req: 60/71] 127.0.0.1 () {42 vars in 833 bytes} [Sun Jun 25 10:22:54 2017] GET /shoaltrack/admin/ => generated 13171 bytes in 43 msecs (HTTP/1.1 200) 6 headers in 251 bytes (1 switches on core 1)
+Internal Server Error: /shoaltrack/admin/telemetrydata/devicedataraw/
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/db/models/options.py", line 617, in get_field
+    return self.fields_map[field_name]
+KeyError: 'latitude'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/utils.py", line 274, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/utils.py", line 308, in _get_non_gfk_field
+    field = opts.get_field(name)
+  File "/usr/lib/python3/dist-packages/django/db/models/options.py", line 619, in get_field
+    raise FieldDoesNotExist('%s has no field named %r' % (self.object_name, field_name))
+django.core.exceptions.FieldDoesNotExist: DeviceDataRaw has no field named 'latitude'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/django/core/handlers/exception.py", line 42, in inner
+    response = get_response(request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 217, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/lib/python3/dist-packages/django/core/handlers/base.py", line 215, in _get_response
+    response = response.render()
+  File "/usr/lib/python3/dist-packages/django/template/response.py", line 109, in render
+    self.content = self.rendered_content
+  File "/usr/lib/python3/dist-packages/django/template/response.py", line 86, in rendered_content
+    content = template.render(context, self._request)
+  File "/usr/lib/python3/dist-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 208, in render
+    return self._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 174, in render
+    return compiled_parent._render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/loader_tags.py", line 70, in render
+    result = block.nodelist.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 994, in render
+    bit = node.render_annotated(context)
+  File "/usr/lib/python3/dist-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+  File "/usr/lib/python3/dist-packages/django/template/library.py", line 225, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 339, in result_list
+    'results': list(results(cl))}
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 315, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 306, in __init__
+    super(ResultList, self).__init__(*items)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/templatetags/admin_list.py", line 217, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+  File "/usr/lib/python3/dist-packages/django/contrib/admin/utils.py", line 290, in lookup_field
+    value = attr()
+  File "./telemetrydata/models/measurement.py", line 105, in latitude
+    if self.geom.geom_type == 'Point':
+AttributeError: 'NoneType' object has no attribute 'geom_type'
+[pid: 1167|app: 0|req: 61/72] 127.0.0.1 () {42 vars in 849 bytes} [Sun Jun 25 10:22:56 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/ => generated 336656 bytes in 347 msecs (HTTP/1.1 500) 4 headers in 260 bytes (2 switches on core 1)
+Sun Jun 25 10:23:00 2017 - uwsgi_response_writev_headers_and_body_do(): Broken pipe [core/writer.c line 296] during GET /shoaltrack/admin/telemetrydata/devicedataraw/9267/change/ (127.0.0.1)
+OSError: write error
+[pid: 1167|app: 0|req: 61/73] 127.0.0.1 () {40 vars in 823 bytes} [Sun Jun 25 10:22:50 2017] GET /shoaltrack/admin/telemetrydata/devicedataraw/9267/change/ => generated 0 bytes in 9391 msecs (HTTP/1.1 200) 7 headers in 0 bytes (0 switches on core 0)
+...brutally killing workers...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/www-data/shoaltrack
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 3 mapped to socket 0 (/home/www-data/shoaltrack.sock)
+running /usr/bin/uwsgi-core
+[uWSGI] getting INI configuration from /home/www-data/shoaltrack/shoaltrack-uwsgi-tcp.ini
+*** Starting uWSGI 2.0.14-debian (64bit) on [Sun Jun 25 11:05:11 2017] ***
+compiled with version: 6.2.1 20161124 on 07 December 2016 16:14:59
+os: Linux-4.9.0-3-amd64 #1 SMP Debian 4.9.30-2 (2017-06-12)
+nodename: manati-client
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/www-data/shoaltrack
+detected binary path: /usr/bin/uwsgi-core
+chdir() to /home/www-data/shoaltrack
+your processes number limit is 13306
+your memory page size is 4096 bytes
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited UNIX address /home/www-data/shoaltrack.sock fd 3
+Python version: 3.5.3 (default, Jan 19 2017, 14:11:04)  [GCC 6.3.0 20170118]
+Python main interpreter initialized at 0x55f472f23660
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55f472f23660 pid: 1156 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 1156)
+spawned uWSGI worker 1 (pid: 1906, cores: 2)
+spawned uWSGI worker 2 (pid: 1908, cores: 2)
+spawned uWSGI worker 3 (pid: 1910, cores: 2)
+spawned uWSGI worker 4 (pid: 1912, cores: 2)

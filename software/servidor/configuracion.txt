@@ -1,0 +1,140 @@
+ #####################################
+ Configuracion de entorno de archivos
+Sistema de ficheros en RAM para alto flujo de escritura-lectura:
+tmpfs es el nombre que recibe un sistema de almacenamiento en muchos sistemas operativos de tipo Unix. Aparece como un sistema de archivos montado aunque usa memoria volátil [RAM]. Es similar a los discos RAM, que aparecen como discos virtuales, y pueden contener sistemas de archivos.
+
+NOTA IMPORTANTE:
+tmpfs normalmente también usa espacio de intercambio en situaciones en las que hay poca memoria volátil disponible. Y la SWAP es en realidad DiscoHD.
+
+Se utilizara por tanto el direcorio /mnt/ramdisk/shoaltrack
+
+You can add the mount entry into /etc/fstab to make the RAM disk persist over reboots. 
+tmpfs       /mnt/ramdisk tmpfs   nodev,nosuid,noexec,nodiratime,size=50M   0 0
+
+root@pepino2:/etc# df -h
+S.ficheros           Tamaño Usados  Disp Uso% Montado en
+udev                    12G      0   12G   0% /dev
+tmpfs                  2,4G   9,3M  2,4G   1% /run
+/dev/sda1               59G    21G   38G  36% /
+tmpfs                   12G      0   12G   0% /dev/shm
+tmpfs                  5,0M   4,0K  5,0M   1% /run/lock
+tmpfs                   12G      0   12G   0% /sys/fs/cgroup
+/dev/sda2              171G    69G  103G  41% /home
+tmpfs                  2,4G    12K  2,4G   1% /run/user/1000
+//server03/datos       3,7T   838G  2,9T  23% /mnt/server03
+//server00/Programas   1,0T   485G  540G  48% /mnt/server00
+tmpfs                   50M      0   50M   0% /mnt/ramdisk
+
+
+#############################
+Creo el ramdisk:(como root):
+$mount /mnt/ramdisk/
+
+############################
+Configurarion de NGINX
+archivo config.
+
+
+
+############################
+configuracion de Base de datos postGIS
+igonzalez@manati-client:/home/www-data$ su
+Contraseña: 
+root@manati-client:/home/www-data# su - postgres
+postgres@manati-client:~$ psql
+psql (10.4 (Debian 10.4-2))
+Digite «help» para obtener ayuda.
+
+
+postgres=# CREATE USER regatasolar PASSWORD 'regatasolar00t';
+CREATE ROLE
+postgres=# CREATE DATABASE regatasolar3db OWNER regatasolar;
+CREATE DATABASE
+postgres=# \q
+postgres@manati-client:~$ psql regatasolar3db
+psql (10.4 (Debian 10.4-2))
+Digite «help» para obtener ayuda.
+
+regatasolar3db=# CREATE EXTENSION postgis;
+CREATE EXTENSION
+regatasolar3db=# CREATE EXTENSION postgis_topology;
+CREATE EXTENSION
+regatasolar3db-# \q
+postgres@manati-client:~$ 
+
+
+#############################
+Configuracion de django:
+resetear las migraciones:
+find . -path "*/migrations/*.py" -not -name "__init__.py" -delete
+find . -path "*/migrations/*.pyc"  -delete
+
+gonzalez@manati-client:/home/www-data/shoaltrack$ python3 manage.py makemigrations
+
+gonzalez@manati-client:/home/www-data/shoaltrack$ python3 manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, competition, contenttypes, devices, profiles, sessions, telemetrydata
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying profiles.0001_initial... OK
+  Applying devices.0001_initial... OK
+  Applying competition.0001_initial... OK
+  Applying sessions.0001_initial... OK
+  Applying telemetrydata.0001_initial... OK
+
+
+igonzalez@manati-client:/home/www-data/shoaltrack$ python3 manage.py createsuperuser
+Username (leave blank to use 'igonzalez'): rsolar
+Email address: igonzalez@cetmar.org
+Password: qweasdzxc
+Password (again): qweasdzxc
+Superuser created successfully.
+
+
+
+#cargo la configuracion inicial:
+igonzalez@manati-client:/home/www-data/shoaltrack$ python3 manage.py solar_race
+
+
+en debug:
+python3 manage.py runserver 0.0.0.0:8002
+
+
+
+#############################
+Arranque del sistema:
+1.- Creo el ramdisk:(como root):
+$mount /mnt/ramdisk/
+
+2.- reinicial el nginx:
+/etc/init.d/nginx restart
+
+3.- ejecutar (como usuario) django:
+cd /home/www-data/shoaltrack/
+./start-shoaltrack.sh 
+
+para pararlo:
+uwsgi --stop /tmp/shoaltrack-master.pid 
+
+
+
+4.- para cada carrera, ejecutar su monitiring:
+./start_race_resis.sh
+./start_race_velocidad.sh 
+
+
+
+#############para monitorizar solo la salida del serial:
+igonzalez@utmar5:~/Trabajo/aindustriosa/proyectos/Shoal-Track/software/ShoalGateway$ python3 shoalgateway.py serial_device
+

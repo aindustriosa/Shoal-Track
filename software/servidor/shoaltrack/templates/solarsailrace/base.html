@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-ES">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="es-es" />
+    <meta name="description" content="II Regata Solar MarineInstruments">
+    <meta name="keywords" content="python, django, race, solar">
+    <meta name="robots" content="index, follow">
+    <meta name="Copyright" content="This site's design and contents Copyright (c) 2016  Fundacion CETMAR." >
+
+    <title>II Regata Solar MarineInstruments | {% block title %}Inicio{% endblock %}</title>
+
+
+    {% load staticfiles %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'tables.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'paleblue/css/screen.css' %}" />
+    {% block head %}
+    {% endblock %}
+</head>
+
+
+<!-- <body id="{% block bodyid %}generic{% endblock %}" class="{% block bodytype %}default{% endblock %}"> -->
+<body>
+
+
+    <div id="container">
+        <div id="header" class="box">
+            {% include "header.html" %}
+        </div>
+        {% block content %}
+        {% endblock %}
+        <div id="footer" class="box">
+            {% include "footer.html" %}
+        </div>
+    </div>
+    
+    <!-- All that javascript -->
+    {% block scripts %}
+    {% endblock %}
+
+</body>
+
+</html>

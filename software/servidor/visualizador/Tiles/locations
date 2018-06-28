@@ -1,0 +1,14 @@
+﻿# This is the locations file used by GMapCatcher.
+#
+# This file contains a list of Locations/Position.
+# Each entry should be kept on an individual line,
+# and MUST have a unique name.
+# The latitude, longitud and zoom should be TAB separated.
+#
+# Additionally, comments (such as these) may be inserted on
+# lines sarting with a '#' symbol.
+#
+# For example:
+#
+#   location="Paris, France"	lat="48.856667"	lng="2.350987"	zoom="5"
+#

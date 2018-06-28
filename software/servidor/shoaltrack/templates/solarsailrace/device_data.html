@@ -1,0 +1,9 @@
+{% extends "base-1col.html" %}
+
+{% load render_table from django_tables2 %}
+
+{% block content %}
+<h1>{{ device_name|safe }}: Listado de Datos de telemetria</h1>
+<!-- tabla de datos devices -->
+    {% render_table table %}
+{% endblock %}

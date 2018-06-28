@@ -1,0 +1,181 @@
+html, body, .gral {
+			height: 100%;
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			
+}
+		  
+#map {
+	position:fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+		  
+
+  
+.header {
+	z-index: 100;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: white;
+	background: rgba(252, 252, 255, 0.85);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 2 px;
+	position: absolute;
+	width: 100%;
+	height: 95px;
+	padding: 5px;
+}
+
+.graphic {
+	z-index: 100;
+	width: 100%;
+	padding: 16px 18px;
+	background: rgba(236, 245, 255, 0.85);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 2 px;
+	position: absolute;
+	bottom: 0;
+    height: 10%;
+}
+
+#logos {
+	width:472px;
+	height: 85px;
+	float: right;
+    margin-right: 25px;
+}
+
+
+#regata{
+	width:100px;
+	height:100px;
+}
+
+.table {
+	position: absolute;
+    float: right;
+    right: 0!important;
+    left: auto!important;
+    width: 30%;
+    border-bottom-left-radius: 0;
+    transition: height 256ms linear 0s,width 256ms linear 0s,background 256ms linear 1024ms;
+	background: rgba(236, 245, 247,0);
+	height: 80%;
+	top: 10%;
+	justify-content: center;
+	display: flex;
+	
+	
+}
+
+
+button {
+	height: 50px;
+	width: 50%;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+	font-weight: bold;
+    margin: 4px 2px;
+    cursor: pointer;
+    background-color: #233a62;
+	position: absolute;
+	margin-top: 15px;
+}
+
+.titulo{
+	text-align: center;
+	font-size: 50px;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	font-family: monospace;
+	font-family: cursive;
+	font-family: fantasy;
+	color: #233a62;
+	
+
+}	
+	
+}
+
+.table_tittle{
+	text-align: center;
+	font-family: Open Sans; 
+	font-size: 25px;
+	font-weight: bold;
+	background-color: #E1EAF2;
+	display: block;
+	margin: auto;
+}
+
+#chartContainer {
+	height: 20%;
+	width: 100%;
+}
+
+#variables {
+	position: absolute;
+    right: 25px;
+	font-family: Open Sans; 
+	font-size: 16px;
+}
+
+.leaflet-popup-content-wrapper {
+  background:#59799A;
+  color:#fff;
+  font-size:16px;
+  line-height:24px;
+  border-radius: 0px;
+  }
+
+  /* Formato de los barcos*/
+
+.svg-inject {
+  fill: 'blue';
+}
+
+
+/*Formato del reloj*/
+
+.clock {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-left: -350px;
+   	width: 700px;
+	height: 150px;
+	color: white;
+	font: normal 12px 'Open Sans', sans-serif;
+	margin-top: 20px;
+	}
+
+ul.countdown {
+list-style: none;
+margin: 75px 0;
+padding: 0;
+display: block;
+text-align: center;
+}
+ul.countdown li {
+display: inline-block;
+}
+ul.countdown li span {
+font-size: 100px;
+font-weight: 300;
+line-height: 80px;
+}
+ul.countdown li.seperator {
+font-size: 80px;
+line-height: 70px;
+vertical-align: top;
+}
+ul.countdown li p {
+font-size: 14px;
+}

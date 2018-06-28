@@ -1,0 +1,161 @@
+Passos a dar para utilizar el sistema shoraltrack:
+
+Consideraciones:
+El gateway ha de tener vision directa con el cielo (por el GPS) y no tener nada entre el y los barcos (para la trasmision).
+He dejado un tripode para cololar el palo de la sonda metereologica. 
+
+######  Inicio:
+1.- Abrir la consola de mandos:
+    Cuidado con las pantallas
+    Colocar un spliter el la salida HDMI de la pantalla de la izquierda
+    Conectar la alimentacion.
+    Conecar el teclado y el raton (mejor si utilizais unos con cable)
+    Encender el ordenador con el miniboton de la placa
+    
+    Esperar.....
+    Cuando salga el loguin:
+    login: igonzalez
+    passwd: iopqweASD12
+    
+    Entrar el el entorno X:
+    #startx
+    
+
+###### Reparto de trackers
+1.- Repartir los trackers a cada usuario:
+Apuntar :
+Nombre usuario -> codigo tracker
+
+2.- obtener las posiciones REALES de las boyas de marcage y de la posicion del Gateway
+ se puede hacer, tanto de forma precisa con un hardware RTK,
+ Como cogiendo un tracker y ejecutando el programa:
+ # cd /home/igonzalez/Trabajo/aindustriosa/proyectos/Shoal-Track/software/ShoalGateway
+ # python3 shoalgateway.py serial_device
+ 
+ La salida de este programa da la posicion GPS del Gateway codigo [201] y de los trackers, con esto podemos saber la posicion de un punto concreto.
+ 
+ Apuntamos las posiciones de: Gateway,  Boya1, Boya2, Boya3, Boya4, Boya5
+ 
+ #####Configuracion de Script 
+ Abrimos el archivo:
+ /home/igonzalez/Trabajo/aindustriosa/proyectos/Shoal-Track/software/servidor/shoaltrack/competition/management/commands/solar_race.py
+ 
+ Y sustituimos los GPS de las boyas y el Gateway en la linea 49:
+ GPS_POSITION_VB1 = '-8.84917890118954 42.120811013102156'
+GPS_POSITION_VB2 = '-8.848669302483188 42.12045437735446'
+GPS_POSITION_VB3 = '-8.848669322002232 42.12118655344638'
+GPS_POSITION_VB4 = '-8.847682278647406 42.12150681570095'
+GPS_POSITION_VB5 = '-8.847832421973171 42.12088212075847'
+GPS_POSITION_GTW = '-8.848197212690147 42.120243544254635'
+
+sustituimos los nombres de los vehiculos (con solo el nombre es suficiente, el resto igual), lineas 157:
+            ['Vehiculo_Open_11',0,'ASRS11','Una persona con un sensor en la cabeza','troncoswagen.png',690,3,3,3,mem['organization']['Organizacion'],[mem['contact']['Rufus'],mem['contact']['Castor']]],
+            ['Vehiculo_Open_12',0,'ASRS12','Una persona con un sensor en la cabeza','troncoswagen.png',690,3,3,3,mem['organization']['Organizacion'],[mem['contact']['Rufus'],mem['contact']['Castor']]],
+            ['Vehiculo_Open_13',0,'ASRS13','Una persona con un sensor en la cabeza','troncoswagen.png',690,3,3,3,mem['organization']['Organizacion'],[mem['contact']['Rufus'],mem['contact']['Castor']]],
+            ['Vehiculo_Open_14',0,'ASRS14','Una persona con un sensor en la cabeza','troncoswagen.png',690,3,3,3,mem['organization']['Organizacion'],[mem['contact']['Rufus'],mem['contact']['Castor']]],
+            ['Vehiculo_Open_15',0,'ASRS15','Una persona con un sensor en la cabeza','troncoswagen.png',690,3,3,3,mem['organization']['Organizacion'],[mem['contact']['Rufus'],mem['contact']['Castor']]],
+            ['Vehiculo_Open_16',0,'ASRS16','Una persona con un sensor en la cabeza','troncoswagen.png',690,3,3,3,mem['organization']['Organizacion'],[mem['contact']['Rufus'],mem['contact']['Castor']]],
+            ['Vehiculo_Open_17',0,'ASRS17','Una persona con un sensor en la cabeza','troncoswagen.png',690,3,3,3,mem['organization']['Organizacion'],[mem['contact']['Rufus'],mem['contact']['Castor']]],
+            ['Vehiculo_Open_18',0,'ASRS18','Una persona con un sensor en la cabeza','troncoswagen.png',690,3,3,3,mem['organization']['Organizacion'],[mem['contact']['Rufus'],mem['contact']['Castor']]],
+            ['Vehiculo_Open_19',0,'ASRS19','Una persona con un sensor en la cabeza','troncoswagen.png',690,3,3,3,mem['organization']['Organizacion'],[mem['contact']['Rufus'],mem['contact']['Castor']]],
+            ['Vehiculo_Open_20',0,'ASRS20','Una persona con un sensor en la cabeza','troncoswagen.png',690,3,3,3,mem['organization']['Organizacion'],[mem['contact']['Rufus'],mem['contact']['Castor']]],
+
+La correspondencia es NombreBarco-> Codigo [ASRS11-20]
+
+###########Inicializacion del Servidor DB:
+1.- Nos logeamos como root:
+#su
+pwd: poimnb234
+
+2.- Creamos la unidad virtual de memoria:
+Creo el ramdisk:(como root):
+root$ mount /mnt/ramdisk/
+
+3.- Primero inicializamos un base de datos vacia en postgreSQL:
+root@manati-client:/home/www-data# su - postgres
+postgres@manati-client:~$ psql
+
+postgres=# DROP DATABASE regatasolar3db;
+DROP DATABASE
+postgres=# CREATE DATABASE regatasolar3db OWNER regatasolar;
+CREATE DATABASE
+postgres=# \q
+
+4.- Creamos las extensiones de postgis:
+postgres@manati-client:~$ psql regatasolar3db
+
+regatasolar3db=# CREATE EXTENSION postgis;
+CREATE EXTENSION
+regatasolar3db=# CREATE EXTENSION postgis_topology;
+CREATE EXTENSION
+regatasolar3db-# \q
+
+###########Inicializamos DJANGO:
+1.- como usuario igonzalez, nos situamos en el directorio de trabajo:
+#cd /home/www-data/shoaltrack
+2.- ejecutamos la creacion de tablas:
+igonzalez@manati-client:/home/www-data/shoaltrack$ python3 manage.py migrate
+
+3.-Creamos un usuario para la gestion de administracion:
+
+igonzalez@manati-client:/home/www-data/shoaltrack$ python3 manage.py createsuperuser
+Username (leave blank to use 'igonzalez'): rsolar
+Email address: igonzalez@cetmar.org
+Password: qweasdzxc
+Password (again): qweasdzxc
+Superuser created successfully.
+
+4.- Llenamos la BD con los datos de partida (con esos datos GPS que hemos recopilado anteriormente):
+
+igonzalez@manati-client:/home/www-data/shoaltrack$ python3 manage.py solar_race
+
+5.- Ejecutamos el servidor DJANGO:
+igonzalez@manati-client:/home/www-data/shoaltrack$ ./start-shoaltrack.sh
+
+Si hay que pararlo:
+uwsgi --stop /tmp/shoaltrack-master.pid 
+
+6.- Con esto ya estaria funcionando el sistema de visualizacion:
+podemos acceder a las siguientes direcciones:
+localhost/  -> visualizador GPS
+localhost/variables  -> visualizador de variables
+localhost/shoaltrack/admin  -> administrador de carreras
+
+
+#####ejecucion de una carrera:
+
+1.- Hay 3 carreras preestablecidas:
+./start_race_pruebas.sh  -> para ver que todo esta en orden y hacerun test de prueba
+./start_race_resis.sh -> para la carrera de resistencia: 3 vueltas al circuito
+./start_race_velocidad.sh -> lacarrera de velocidad
+
+2.- Se ejecuta su script:
+Aparece por laterminal unos datos y se queda a la espera-> todo ok
+
+3.- Justo antes decomenzar:
+Se va al panel de administracion-> campeonato-> carreras->carrera-elegida:
+Aqui hay quevuscar un item que sea: "estado de la carrera": que estaria en "abierta" -> hay que ponerla a "Comenzando" y darle a GRABAR
+
+4.- En este momento ya aparecen los daots por la terminal...
+Ya se pueden ver los datos en el visualizador
+
+Si por alguna razon se cuelga el terminal... se puedevolver alanzar el script y seguiria cogiendo datos...
+
+5.- Para terminar una carrera:
+Se va al panel de administracion-> campeonato-> carreras->carrera-elegida:
+Aqui hay quevuscar un item que sea: "estado de la carrera": que estaria en "comenzado" -> hay que ponerla a "Finalizada" y darle a GRABAR
+
+Paramos el script  de la terminal con CTRL+C (varias veces :-P)
+
+
+7.- Se repetirian los pasos del 2 al 5 para la siguente carrera.
+
+
+####apagado:
+Simplemente dar la opcionde "apagar" en la barra de inicio y cuando haya pasado un minuto mas o menos, ya se puede desconectar de la corriente.
+
+Se pliega con cuidado y listo.
+
+NOTA:
+Puede que haya dos personas del CETMAR que saben un poco como funciona todo:
+Pablo Fernandez (de software) y Cristian Simoes(de hardware)

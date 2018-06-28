@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-ES">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Language" content="es-es" />
+    <meta name="description" content="Plataforma plactom para la gestion de recursos de la unidad de tecnologias marinas del CETMAR">
+    <meta name="keywords" content="python, django, plactom, utmar, cms, crm">
+    <meta name="robots" content="index, follow">
+    <meta name="Copyright" content="This site's design and contents Copyright (c) 2011  Fundacion CETMAR." >
+
+    <title>PLACTOM | {% block title %}Plataforma de gestión de recursos de UTMAR{% endblock %}</title>
+
+
+    {% load staticfiles %}
+    <link href="{% static "bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "bootstrap/css/local.min.css" %}" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'cetmar/base.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'cetmar/tables.css' %}" />
+    {% block head %}
+    {% endblock %}
+</head>
+
+
+<!-- <body id="{% block bodyid %}generic{% endblock %}" class="{% block bodytype %}default{% endblock %}"> -->
+<body>
+    <nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/plactom2dev/"> PLACTOM - Plataforma de control técnico, operativo y mantenimiento<img alt="plactom-logo"  src="{% static "cetmar/images/pixmaps/plactom-logo.gif" %}" width="60" height="60" class="no-border"></a>
+        </div>
+        
+        
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        
+        <ul class="nav navbar-nav navbar-left">
+            <li class="active"><a href="">Usuario: </a></li>
+            <li class="dropdown">
+            {% if user.is_active %}
+            <a href="/plactom2dev/profiles/{{user.username }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{% filter force_escape %}{% firstof user.first_name user.username %}{% endfilter %} <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="/admin">Panel de control</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/plactom2dev/profiles/logout">Desconectarse</a></li>
+            </ul>
+            {% else %}
+            <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Desconocido<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="/plactom2dev/profiles/login">Identificarse</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="/plactom2dev/profiles/guest">Invitado</a></li>
+            </ul>
+            {% endif %}
+        </ul>
+        
+        
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+    </nav>
+
+    <div class="container main-no-gap">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div id="footer">
+    <div class="footer-left">
+                <p class="align-left">
+		    &copy; 2011 <strong>Centro Tecnologico del Mar - Fundacion CETMAR</strong> |
+                    Design by <a href="http://www.cetmar.org/">CETMAR</a> |
+		    Valid <a href="http://validator.w3.org/check/referer">XHTML</a> |
+		    <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a>
+		</p>
+	    </div>
+     </div>
+    <!-- All that javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
+
+    {% block scripts %}
+    {% endblock %}
+
+</body>
+
+</html>

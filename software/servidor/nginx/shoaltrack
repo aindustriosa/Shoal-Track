@@ -1,0 +1,51 @@
+# Configuracion del servidor statico principal.
+##
+server {
+    listen   80; ## listen for ipv4; this line is default and implied
+    #listen   [::]:80 default ipv6only=on; ## listen for ipv6
+    
+    #para evitar escaneos malintencionados, el direcorio raiz a las paginas estaticas
+    root /home/www-data/visualizador;
+    index index.html index.htm;
+
+    # Make site accessible from http://localhost/
+    server_name regatasolar.org;
+
+    charset     utf-8;
+
+    # max upload size                                                                                                                                           
+    client_max_body_size 75M;   # adjust to taste                                                                                                               
+                                                                                                                                                                
+    location / {                                                                                                                                                                                                                                                           
+        try_files $uri $uri/ /index.html;                                                                                                                                                                                                           
+    }
+
+    location /shoaltrack/static {
+        alias /home/www-data/shoaltrack/static;
+        autoindex on;
+    }
+    location /shoaltrack/media {
+        alias /home/www-data/shoaltrack/media;
+        autoindex on;
+    }
+    
+    location /shoaltrack/services/json {
+        alias /mnt/ramdisk/shoaltrack/services/json;
+        add_header 'Access-Control-Allow-Origin' '*';
+        add_header Cache-Control no-cache;
+        expires off;
+        access_log off;
+        add_header 'Content-Type' 'application/json';
+
+    }
+
+    location /shoaltrack {
+        uwsgi_pass      unix:/home/www-data/shoaltrack.sock;
+        #uwsgi_pass  127.0.0.1:8001; # for a web port socket (we'll use this first)
+        include     uwsgi_params;
+
+    }
+
+    
+
+}
