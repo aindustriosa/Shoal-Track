@@ -727,7 +727,7 @@ class MonitoringRace():
     def commit_data(self,):
         try:
            DeviceDataRaw.objects.bulk_create(self.telemetry_items)
-           elf.telemetry_items = []
+           self.telemetry_items = []
         except:
             return
         
