@@ -127,6 +127,7 @@ class MonitoringRace():
     Se carga unas consultas para no estar constanteemente pidiendo los datos
     '''
     def __init__(self,):
+        self.error_logfile = '/home/www-data/log/shoaltrack_race.log'
         self.enable_log = False #para activar o desactivar el log a ficheros
         self.log_pathdir = '/mnt/ramdisk/shoaltrack/services/json'
         self.champion = None
@@ -357,11 +358,13 @@ class MonitoringRace():
         datapack = initial_datapack()
         
         if not (datum['Id_Code'] in self.node.keys()):
+            self.write_error(datum)
             return
         #si no hay mensaje correcto, salgo:
         try:
             id_packet = datum['msgID']
         except:
+            self.write_error(datum)
             return
         
         #CARDUME_ID_TRACEROUTE y gateway
@@ -728,8 +731,21 @@ class MonitoringRace():
         try:
            DeviceDataRaw.objects.bulk_create(self.telemetry_items)
            self.telemetry_items = []
-        except:
-            return
+           
+        except Exception as error:
+            print ('An exception was thrown!')
+            print (str(error))
+            #self.write_error(self.telemetry_items)
+            self.telemetry_items = []
+            print ('Flush items!')
+        
+    def write_error(error_data):    
+        with open(self.error_logfile, "a") as output_file:
+            if type(error_data) is list:
+                for item in error_data:
+                    input_file.write(str(item)+'\n')
+            else:
+                input_file.write(str(error_data)+'\n')
         
         
     def write_log(self,):
