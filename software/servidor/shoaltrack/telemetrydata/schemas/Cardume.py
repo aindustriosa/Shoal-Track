@@ -308,7 +308,7 @@ def parse_shoaltrack(packet):
         msg['voltage_batt_std_B']=packet[9]>>4
         msg['voltage_batt_avg']=((packet[9] & 15)<<8)+packet[8]  #15: 00001111
         msg['voltage_batt_std'] =  msg['voltage_batt_std_A']<<4 +msg['voltage_batt_std_B']
-        msg['voltage_batt_std'] =  (msg['voltage_batt_std'] *1023) /63
+        msg['voltage_batt_std'] =  int((msg['voltage_batt_std'] *1023) /63)
         #Otra manera de hacerlo:
         #msg['voltage_batt_avg2']=int.from_bytes([(packet[9]&0x0f),packet[8]],
         #                                                                 byteorder='big')
@@ -321,17 +321,17 @@ def parse_shoaltrack(packet):
         msg['amp_batt_avg'] = int.from_bytes([packet[11], packet[10]],
                                                                             byteorder='big',signed=True) 
         msg['amp_batt_std'] =  (msg['amp_batt_std_A']<<4) +msg['amp_batt_std_B']
-        msg['amp_batt_std'] =  (msg['amp_batt_std'] *1023) /63
+        msg['amp_batt_std'] =  int((msg['amp_batt_std'] *1023) /63)
 
         msg['pressure_std_B']=packet[13]>>4
         msg['pressure_avg']=((packet[13] & 15)<<8)+packet[12] #15: 00001111
         msg['pressure_std'] =  (msg['pressure_std_A']<<4) +msg['pressure_std_B']
-        msg['pressure_std'] =  (msg['pressure_std'] *1023) /63
+        msg['pressure_std'] =  int((msg['pressure_std'] *1023) /63)
 
         msg['ligth_std_B']=packet[15]>>4
         msg['ligth_avg']=((packet[15] & 15)<<8)+packet[14] #15: 00001111
         msg['ligth_std'] =  (msg['ligth_std_A']<<4) +msg['ligth_std_B']
-        msg['ligth_std'] =  (msg['ligth_std'] *1023) /63
+        msg['ligth_std'] = int( (msg['ligth_std'] *1023) /63)
             
         
         msg['accX_std_B']=packet[17]>>4
@@ -343,7 +343,7 @@ def parse_shoaltrack(packet):
                                                                             byteorder='big',signed=True) 
         msg['accX_std'] =  (msg['accX_std_A']<<4) +msg['accX_std_B']
         msg['accX_std'] =  (msg['accX_std'] *1023) /63
-        msg['accX_std'] = msg['accX_std']*(msg['acc_std_F']+1)
+        msg['accX_std'] = int(msg['accX_std']*(msg['acc_std_F']+1))
         
         msg['accY_std_B']=packet[19]>>4
         if (packet[19] & 8): #8: 00001000 Si es negativo, pongo todos los 0 a negativos:
@@ -354,7 +354,7 @@ def parse_shoaltrack(packet):
                                                                             byteorder='big',signed=True) 
         msg['accY_std'] =  (msg['accY_std_A']<<4) +msg['accY_std_B']
         msg['accY_std'] =  (msg['accY_std'] *1023) /63
-        msg['accY_std'] = msg['accY_std']*(msg['acc_std_F']+1)
+        msg['accY_std'] = int(msg['accY_std']*(msg['acc_std_F']+1))
         
         msg['accZ_std_B']=packet[21]>>4
         if (packet[21] & 8): #8: 00001000 Si es negativo, pongo todos los 0 a negativos:
@@ -365,7 +365,7 @@ def parse_shoaltrack(packet):
                                                                             byteorder='big',signed=True) 
         msg['accZ_std'] =  (msg['accZ_std_A']<<4) +msg['accZ_std_B']
         msg['accZ_std'] =  (msg['accZ_std'] *1023) /63
-        msg['accZ_std'] = msg['accZ_std']*(msg['acc_std_F']+1)
+        msg['accZ_std'] = int(msg['accZ_std']*(msg['acc_std_F']+1))
         
 
         msg['gyrX_std_B']=packet[23]>>4
@@ -377,7 +377,7 @@ def parse_shoaltrack(packet):
                                                                             byteorder='big',signed=True) 
         msg['gyrX_std'] =  (msg['gyrX_std_A']<<4) +msg['gyrX_std_B']
         msg['gyrX_std'] =  (msg['gyrX_std'] *1023) /63
-        msg['gyrX_std'] = msg['gyrX_std']*(msg['gyr_std_F']+1)
+        msg['gyrX_std'] = int(msg['gyrX_std']*(msg['gyr_std_F']+1))
         
         msg['gyrY_std_B']=packet[25]>>4
         if (packet[25] & 8): #8: 00001000 Si es negativo, pongo todos los 0 a negativos:
@@ -388,7 +388,7 @@ def parse_shoaltrack(packet):
                                                                             byteorder='big',signed=True) 
         msg['gyrY_std'] =  msg['gyrY_std_A']<<4 +msg['gyrY_std_B']
         msg['gyrY_std'] =  (msg['gyrY_std'] *1023) /63
-        msg['gyrY_std'] = msg['gyrY_std']*(msg['gyr_std_F']+1)
+        msg['gyrY_std'] = int(msg['gyrY_std']*(msg['gyr_std_F']+1))
         
         msg['gyrZ_std_B']=packet[27]>>4
         if (packet[27] & 8): #8: 00001000 Si es negativo, pongo todos los 0 a negativos:
@@ -399,7 +399,7 @@ def parse_shoaltrack(packet):
                                                                             byteorder='big',signed=True) 
         msg['gyrZ_std'] =  (msg['gyrZ_std_A']<<4) +msg['gyrZ_std_B']
         msg['gyrZ_std'] =  (msg['gyrZ_std'] *1023) /63
-        msg['gyrZ_std'] = msg['gyrZ_std']*(msg['gyr_std_F']+1)
+        msg['gyrZ_std'] = int(msg['gyrZ_std']*(msg['gyr_std_F']+1))
         
         msg['gps_longitude'] = int.from_bytes([packet[28],packet[29],packet[30],packet[31]],
                                             byteorder='little',signed=True)  #-812345
