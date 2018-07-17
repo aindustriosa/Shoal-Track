@@ -743,9 +743,9 @@ class MonitoringRace():
         with open(self.error_logfile, "a") as output_file:
             if type(error_data) is list:
                 for item in error_data:
-                    input_file.write(str(item)+'\n')
+                    output_file.write(str(item)+'\n')
             else:
-                input_file.write(str(error_data)+'\n')
+                output_file.write(str(error_data)+'\n')
         
         
     def write_log(self,):

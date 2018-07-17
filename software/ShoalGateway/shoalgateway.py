@@ -48,7 +48,11 @@ class MasterSerialGateWay():
         #msg = m.recv_match(blocking=True) #bloqueante
         
         need = self.protocol.bytes_needed() #cuantos necesito
+        if need <1:
+            print('Bytes need: '+str(need))
         data_read= self.master.recv(need)
+        if not data_read:#no hay nada recogido
+            return None
         #if data_read:
         #   print(data_read)
         
@@ -64,6 +68,7 @@ class MasterSerialGateWay():
             return msg
         
         else:
+            #print('No Correct Packet... ')
             return None
                 
     def decode(self, msg,keys=None):
@@ -111,11 +116,21 @@ class MasterFileGateWay():
         
         return msg
 
+
+def write_log(log_data):    
+        with open(self.error_logfile, "a") as output_file:
+            if type(error_data) is list:
+                for item in error_data:
+                    input_file.write(str(item)+'\n')
+            else:
+                input_file.write(str(error_data)+'\n')
+
 ####################################
 #programa central
 if __name__ == "__main__":
     
     #prctl.set_name('shoalgateway')
+    logfile = 'log_telemetry.log'
     
     configspec = ConfigObj('settings_spec.conf', encoding="ISO-8859-1", list_values=False, _inspec=True)
     
@@ -148,17 +163,53 @@ if __name__ == "__main__":
                 #print(packet)
                 pkt = master_gtw.decode(packet)
                 
+                with open(logfile, "a") as output_file:
+                    output_file.write(str(pkt)+'\n')
+                
                 if pkt['payload']['msgID']==129:
-                    print(pkt['FROM'],'|',pkt['time_mark'],'|',pkt['payload']['msgID'],
-                              pkt['payload']['gps_longitude'],'|',pkt['payload']['gps_latitude'])
+                    print('FROM:{0}\tId_Code:{1}\ttime_mark:{2}\
+\tNHop:{3}\tGPS:{4},{5}\tiTow:{6}\
+\tPress:{7}\tLigth:{8}\tAx:{9}\tAy:{10}\tAcz{11}'.format(pkt['FROM'],
+                                                                                                        pkt['Id_Code'],
+                                                                                                        pkt['time_mark'],
+                                                                                                        pkt['payload']['nextHop'],
+                                                                                                        pkt['payload']['gps_latitude'],
+                                                                                                        pkt['payload']['gps_longitude'],
+                                                                                                        pkt['payload']['gps_itow'],
+                                                                                                        pkt['payload']['pressure_avg'],
+                                                                                                        pkt['payload']['ligth_avg'],
+                                                                                                        pkt['payload']['accX_avg'],
+                                                                                                        pkt['payload']['accY_avg'],
+                                                                                                        pkt['payload']['accZ_avg']))
+                
                 elif pkt['payload']['msgID']==130:
-                    print(pkt['FROM'],'|',pkt['time_mark'],'|',pkt['payload']['msgID'],
-                              pkt['payload']['wind_direction_avg'],'|',pkt['payload']['wind_speed_avg'])
+                    print('FROM:{0}\tId_Code:{1}\tTime_mark:{2}\
+\tWdir:{3}\tWspeed:{4}'.format(pkt['FROM'],
+                                                                              pkt['Id_Code'],
+                                                                              pkt['time_mark'],
+                                                                              pkt['payload']['wind_direction_avg'],
+                                                                              pkt['payload']['wind_speed_avg']))
+                
                 elif pkt['payload']['msgID']==131:
-                    print(pkt['FROM'],'|',pkt['time_mark'],'|',pkt['payload']['msgID'],
-                              pkt['payload']['air_temperature'],'|',pkt['payload']['relative_humidity'],'|',pkt['payload']['air_pressure'])
+                    print('FROM:{0}\tId_Code:{1}\tTime_mark:{2}\
+\tAirTemp:{3}\tHum:{4}\tAirPres:{5}'.format(pkt['FROM'],
+                                                                              pkt['Id_Code'],
+                                                                              pkt['time_mark'],
+                                                                              pkt['payload']['air_temperature'],
+                                                                              pkt['payload']['relative_humidity'],
+                                                                              pkt['payload']['air_pressure']))
+                
+                elif pkt['payload']['msgID']==64:
+                    print('FROM:{0}\tId_Code:{1}\tTime_mark:{2}\
+\trssi:{3}\tGPS:{4},{5}\tiTow:{6}'.format(pkt['FROM'],
+                                                                                             pkt['Id_Code'],
+                                                                                             pkt['time_mark'],
+                                                                                             pkt['payload']['rssi'],
+                                                                                             pkt['payload']['gps_latitude'],
+                                                                                             pkt['payload']['gps_longitude'],
+                                                                                             pkt['payload']['gps_itow']))
                 else:
-                    print(pkt['FROM'],'|',pkt['time_mark'],'|',pkt['payload']['msgID'])
+                    print(pkt['FROM'],'|',pkt['time_mark'],'|',pkt['payload']['msgID'],pkt['payload'])
                 #print(pkt)
                 #if pkt['FROM'] == 11:
                 #   print(pkt)

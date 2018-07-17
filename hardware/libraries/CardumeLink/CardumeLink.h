@@ -6,7 +6,7 @@
 #ifndef CARDUMELINK_H_
 #define CARDUMELINK_H_
 
-#include <RHMesh.h>
+#include <RHReliableDatagram.h>
 #include <Crypto.h>
 #include <Poly1305.h>
 #include <ChaCha.h>
@@ -115,7 +115,7 @@ struct crdm_Keys_t {
 
 
 
-class CardumeLink : public RHMesh
+class CardumeLink : public RHReliableDatagram
 {
 public:
         CardumeLink(RHGenericDriver& driver,

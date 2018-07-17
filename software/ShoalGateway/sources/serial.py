@@ -32,8 +32,9 @@ class serialport(object):
         # we rather strangely set the baudrate initially to 1200, then change to the desired
         # baudrate. This works around a kernel bug on some Linux kernels where the baudrate
         # is not set correctly
-        self.port = serial.Serial(self.device, 1200, timeout=0,
-                                  dsrdtr=False, rtscts=False, xonxoff=False)
+        self.port = serial.Serial(self.device, 1200, timeout=0.5,
+                                  dsrdtr=False, rtscts=False, xonxoff=False,
+                                  inter_byte_timeout=0.1)
         
         self.source_system = source_system
         
@@ -59,10 +60,12 @@ class serialport(object):
     def recv(self,n):
         if n is None:
             n = 1
-        waiting = self.port.inWaiting()
-        if waiting < n:
-            n = waiting
-        return  self.port.read(n) # no es bloqueante, no espera a nada
+        #Esto da errores de lectura:CERO
+        #waiting = self.port.inWaiting()
+        #if waiting <1: #si no hay nada esperando
+        #   return None
+        #lectura bloqueante de 0.5 sec, o que entre bytes pase mas de 0.1
+        return  self.port.read(n)
     
     def write(self, buf):
         if not isinstance(buf, str):

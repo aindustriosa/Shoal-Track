@@ -16,7 +16,7 @@
 ////////////////////////////////////////////////////////////////////
 // Constructors
 CardumeLink::CardumeLink(RHGenericDriver& driver, uint8_t thisAddress) 
-    : RHMesh(driver, thisAddress)
+    : RHReliableDatagram(driver, thisAddress)
 {
     
     memset(bufferRF, 0xBA, sizeof(bufferRF)); //inicializo a valores conocidos
@@ -28,7 +28,7 @@ CardumeLink::CardumeLink(RHGenericDriver& driver, uint8_t thisAddress)
 */
 uint8_t CardumeLink::initialize(crdm_Keys_t *keydata) {
 
-  if (!RHMesh::init()) {
+  if (!RHReliableDatagram::init()) {
     return 0;
   }
   // Defaults after init are 434.0MHz, 13dBm, Bw = 125 kHz, Cr = 4/5, Sf = 128chips/symbol, CRC on
@@ -41,6 +41,7 @@ uint8_t CardumeLink::initialize(crdm_Keys_t *keydata) {
   // Detection shows no activity on the channel before transmitting by setting
   // the CAD timeout to non-zero:
   //  driver.setCADTimeout(10000);
+  RHReliableDatagram::setTimeout(CARDUME_MAX_TIME_WAIT);
   
   
   //sistema de checksum hash-cifrado:
@@ -175,7 +176,7 @@ uint8_t CardumeLink::send_Packet(uint8_t packet_id, uint8_t msg_header[],
     
     //lo envio
     
-    return RHMesh::sendtoWait(bufferRF, 
+    return RHReliableDatagram::sendtoWait(bufferRF, 
                                       msg_header[CARDUME_ID_HEADER_LEN_POS],
                                       msg_header[CARDUME_ID_HEADER_TO_POS]);
 }
@@ -183,16 +184,17 @@ uint8_t CardumeLink::send_Packet(uint8_t packet_id, uint8_t msg_header[],
 //obtengo el salto necesario para alcanzar el destino
 uint8_t CardumeLink::get_nexthop(uint8_t to_address){
     //si es a mi mismo:
-    if (to_address==RHMesh::thisAddress()){
+    if (to_address==RHReliableDatagram::thisAddress()){
         return 0; //
     }
-    RoutingTableEntry* route = getRouteTo(to_address);
-    return route->next_hop;
+    //RoutingTableEntry* route = getRouteTo(to_address);
+    //return route->next_hop;
+    return to_address;
 }
 
 //obtengo el salto necesario para alcanzar el destino
 int8_t CardumeLink::get_rssi(void){
-    return (int8_t)RHMesh::_driver.lastRssi();
+    return (int8_t)RHReliableDatagram::_driver.lastRssi();
 }
 
 
@@ -201,13 +203,13 @@ int8_t CardumeLink::get_rssi(void){
 //Miro si hay una peticion esperando mi respuesta, relleno la respuesto con la estructura
 //y obtengo el estado de la operacion
 uint8_t CardumeLink::request_handle(void) {
-  if (RHMesh::available())  {
+  if (RHReliableDatagram::available())  {
     uint8_t packet_len;
 
     //espero respuesta  // Now wait for a reply from the server
     packet_len = CARDUME_MAX_PACKET_LEN; //para que entre toda la trama
     
-    if (RHMesh::recvfromAckTimeout(bufferRF, 
+    if (RHReliableDatagram::recvfromAckTimeout(bufferRF, 
         &packet_len,CARDUME_MAX_TIME_WAIT,&addr_from)) {
         
         //compruebo que es una trama valida:
@@ -224,7 +226,7 @@ uint8_t CardumeLink::request_handle(void) {
         }
         
         //a partir de aqui, la trama en principio es valida:
-        if (bufferRF[CARDUME_ID_HEADER_TO_POS] ==RHMesh::thisAddress() ){ //si soy el destinatario:
+        if (bufferRF[CARDUME_ID_HEADER_TO_POS] ==RHReliableDatagram::thisAddress() ){ //si soy el destinatario:
             return CARDUME_MSG_TOME;
         } else if(bufferRF[CARDUME_ID_HEADER_TO_POS] ==CARDUME_NATOUT_ADDRESS) { // el destinatario es la salida al exterior
             return CARDUME_MSG_TOOUT;

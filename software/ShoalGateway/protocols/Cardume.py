@@ -129,6 +129,8 @@ class CardumeProtocol():
             return self.packet_expected_length-self.total_bytes_received
         
         else:
+            #reset packet recieve
+            self.packet_state = self.WAITING_START_PACKET
             return 0
         
         
@@ -179,6 +181,10 @@ class CardumeProtocol():
         header['length'] = raw_pack[self.LEN_PACKET_POS]
         header['FROM']  = raw_pack[self.FROM_PACKET_POS]
         header['TO']  = raw_pack[self.TO_PACKET_POS]
+        if (header['FROM'] > 200):
+            header['Id_Code']  ='GTWN{0:02}'.format(header['FROM']-200)
+        else:
+            header['Id_Code']  ='ASRS{0:03}'.format(header['FROM'])
     
         year     = (raw_pack[self.TIMEMARK_PACKET_POS+3]>>2)+2000 
         month  = ((raw_pack[self.TIMEMARK_PACKET_POS+3] & 0x03) <<2)+(raw_pack[self.TIMEMARK_PACKET_POS+2] >>6) # 3: 00000011
@@ -257,9 +263,11 @@ def parse_traceroute(packet):
     
         msg['gps_longitude'] = int.from_bytes([packet[4],packet[5],packet[6],packet[7]],
                                             byteorder='little',signed=True)  #-812345
+        msg['gps_longitude'] = msg['gps_longitude']/10000000
 
         msg['gps_latitude'] = int.from_bytes([packet[8], packet[9], packet[10],packet[11]],
                                             byteorder='little',signed=True)  #-812345
+        msg['gps_latitude'] = msg['gps_latitude']/10000000
         
         msg['gps_itow'] =int.from_bytes([packet[12], packet[13], packet[14],packet[15]],
                                             byteorder='little',signed=False)  #
@@ -283,18 +291,18 @@ def parse_shoaltrack(packet):
         msg['gps_heading'] = packet[4]
         
         msg['acc_std_F']=packet[5]>>6 
-        msg['accx_std_A']=(packet[5]&48)>>4 #48:00110000 
-        msg['accy_std_A']=(packet[5]&12)>>2 #48:00001100 
-        msg['accz_std_A']=(packet[5]&3) #48:00000011 
+        msg['accX_std_A']=(packet[5]&48)>>4 #48:00110000 
+        msg['accY_std_A']=(packet[5]&12)>>2 #48:00001100 
+        msg['accZ_std_A']=(packet[5]&3) #48:00000011 
         
         msg['gyr_std_F']=packet[6]>>6 
-        msg['gyrx_std_A']=(packet[6]&48)>>4 #48:00110000 
-        msg['gyry_std_A']=(packet[6]&12)>>2 #48:00001100 
-        msg['gyrz_std_A']=(packet[6]&3) #48:00000011 
+        msg['gyrX_std_A']=(packet[6]&48)>>4 #48:00110000 
+        msg['gyrY_std_A']=(packet[6]&12)>>2 #48:00001100 
+        msg['gyrZ_std_A']=(packet[6]&3) #48:00000011 
         
         msg['voltage_batt_std_A']=packet[7]>>6 
-        msg['amperage_std_A']=(packet[7]&48)>>4 #48:00110000 
-        msg['pressure_ext_std_A']=(packet[7]&12)>>2 #48:00001100 
+        msg['amp_batt_std_A']=(packet[7]&48)>>4 #48:00110000 
+        msg['pressure_std_A']=(packet[7]&12)>>2 #48:00001100 
         msg['ligth_std_A']=(packet[7]&3) #48:00000011 
         
         #print(bin(packet[2]))
@@ -302,104 +310,106 @@ def parse_shoaltrack(packet):
         msg['voltage_batt_std_B']=packet[9]>>4
         msg['voltage_batt_avg']=((packet[9] & 15)<<8)+packet[8]  #15: 00001111
         msg['voltage_batt_std'] =  msg['voltage_batt_std_A']<<4 +msg['voltage_batt_std_B']
-        msg['voltage_batt_std'] =  (msg['voltage_batt_std'] *1023) /63
+        msg['voltage_batt_std'] =  int((msg['voltage_batt_std'] *1023) /63)
         #Otra manera de hacerlo:
         #msg['voltage_batt_avg2']=int.from_bytes([(packet[9]&0x0f),packet[8]],
         #                                                                 byteorder='big')
         
-        msg['amperage_std_B']=packet[11]>>4
+        msg['amp_batt_std_B']=packet[11]>>4
         if (packet[11] & 8): #8: 00001000 Si es negativo, pongo todos los 0 a negativos:
             packet[11]  |= 240
         else:
             packet[11] &= 15 #si no, los quito
-        msg['amperage_avg'] = int.from_bytes([packet[11], packet[10]],
+        msg['amp_batt_avg'] = int.from_bytes([packet[11], packet[10]],
                                                                             byteorder='big',signed=True) 
-        msg['amperage_std'] =  (msg['amperage_std_A']<<4) +msg['amperage_std_B']
-        msg['amperage_std'] =  (msg['amperage_std'] *1023) /63
+        msg['amp_batt_std'] =  (msg['amp_batt_std_A']<<4) +msg['amp_batt_std_B']
+        msg['amp_batt_std'] =  int((msg['amp_batt_std'] *1023) /63)
 
-        msg['pressure_ext_std_B']=packet[13]>>4
-        msg['pressure_ext_avg']=((packet[13] & 15)<<8)+packet[12] #15: 00001111
-        msg['pressure_ext_std'] =  (msg['pressure_ext_std_A']<<4) +msg['pressure_ext_std_B']
-        msg['pressure_ext_std'] =  (msg['pressure_ext_std'] *1023) /63
+        msg['pressure_std_B']=packet[13]>>4
+        msg['pressure_avg']=((packet[13] & 15)<<8)+packet[12] #15: 00001111
+        msg['pressure_std'] =  (msg['pressure_std_A']<<4) +msg['pressure_std_B']
+        msg['pressure_std'] =  int((msg['pressure_std'] *1023) /63)
 
         msg['ligth_std_B']=packet[15]>>4
         msg['ligth_avg']=((packet[15] & 15)<<8)+packet[14] #15: 00001111
         msg['ligth_std'] =  (msg['ligth_std_A']<<4) +msg['ligth_std_B']
-        msg['ligth_std'] =  (msg['ligth_std'] *1023) /63
+        msg['ligth_std'] = int( (msg['ligth_std'] *1023) /63)
             
         
-        msg['accx_std_B']=packet[17]>>4
+        msg['accX_std_B']=packet[17]>>4
         if (packet[17] & 8): #8: 00001000 Si es negativo, pongo todos los 0 a negativos:
             packet[17]  |= 240
         else:
             packet[17] &= 15 #si no, los quito
-        msg['accx_avg'] = int.from_bytes([packet[17], packet[16]],
+        msg['accX_avg'] = int.from_bytes([packet[17], packet[16]],
                                                                             byteorder='big',signed=True) 
-        msg['accx_std'] =  (msg['accx_std_A']<<4) +msg['accx_std_B']
-        msg['accx_std'] =  (msg['accx_std'] *1023) /63
-        msg['accx_std'] = msg['accx_std']*(msg['acc_std_F']+1)
+        msg['accX_std'] =  (msg['accX_std_A']<<4) +msg['accX_std_B']
+        msg['accX_std'] =  (msg['accX_std'] *1023) /63
+        msg['accX_std'] = int(msg['accX_std']*(msg['acc_std_F']+1))
         
-        msg['accy_std_B']=packet[19]>>4
+        msg['accY_std_B']=packet[19]>>4
         if (packet[19] & 8): #8: 00001000 Si es negativo, pongo todos los 0 a negativos:
             packet[19]  |= 240
         else:
             packet[19] &= 15 #si no, los quito
-        msg['accy_avg'] = int.from_bytes([packet[19], packet[18]],
+        msg['accY_avg'] = int.from_bytes([packet[19], packet[18]],
                                                                             byteorder='big',signed=True) 
-        msg['accy_std'] =  (msg['accy_std_A']<<4) +msg['accy_std_B']
-        msg['accy_std'] =  (msg['accy_std'] *1023) /63
-        msg['accy_std'] = msg['accy_std']*(msg['acc_std_F']+1)
+        msg['accY_std'] =  (msg['accY_std_A']<<4) +msg['accY_std_B']
+        msg['accY_std'] =  (msg['accY_std'] *1023) /63
+        msg['accY_std'] = int(msg['accY_std']*(msg['acc_std_F']+1))
         
-        msg['accz_std_B']=packet[21]>>4
+        msg['accZ_std_B']=packet[21]>>4
         if (packet[21] & 8): #8: 00001000 Si es negativo, pongo todos los 0 a negativos:
             packet[21]  |= 240
         else:
             packet[21] &= 15 #si no, los quito
-        msg['accz_avg'] = int.from_bytes([packet[21], packet[20]],
+        msg['accZ_avg'] = int.from_bytes([packet[21], packet[20]],
                                                                             byteorder='big',signed=True) 
-        msg['accz_std'] =  (msg['accz_std_A']<<4) +msg['accz_std_B']
-        msg['accz_std'] =  (msg['accz_std'] *1023) /63
-        msg['accz_std'] = msg['accz_std']*(msg['acc_std_F']+1)
+        msg['accZ_std'] =  (msg['accZ_std_A']<<4) +msg['accZ_std_B']
+        msg['accZ_std'] =  (msg['accZ_std'] *1023) /63
+        msg['accZ_std'] = int(msg['accZ_std']*(msg['acc_std_F']+1))
         
 
-        msg['gyrx_std_B']=packet[23]>>4
+        msg['gyrX_std_B']=packet[23]>>4
         if (packet[23] & 8): #8: 00001000 Si es negativo, pongo todos los 0 a negativos:
             packet[23]  |= 240
         else:
             packet[23] &= 15 #si no, los quito
-        msg['gyrx_avg'] = int.from_bytes([packet[23], packet[22]],
+        msg['gyrX_avg'] = int.from_bytes([packet[23], packet[22]],
                                                                             byteorder='big',signed=True) 
-        msg['gyrx_std'] =  (msg['gyrx_std_A']<<4) +msg['gyrx_std_B']
-        msg['gyrx_std'] =  (msg['gyrx_std'] *1023) /63
-        msg['gyrx_std'] = msg['gyrx_std']*(msg['gyr_std_F']+1)
+        msg['gyrX_std'] =  (msg['gyrX_std_A']<<4) +msg['gyrX_std_B']
+        msg['gyrX_std'] =  (msg['gyrX_std'] *1023) /63
+        msg['gyrX_std'] = int(msg['gyrX_std']*(msg['gyr_std_F']+1))
         
-        msg['gyry_std_B']=packet[25]>>4
+        msg['gyrY_std_B']=packet[25]>>4
         if (packet[25] & 8): #8: 00001000 Si es negativo, pongo todos los 0 a negativos:
             packet[25]  |= 240
         else:
             packet[25] &= 15 #si no, los quito
-        msg['gyry_avg'] = int.from_bytes([packet[25], packet[24]],
+        msg['gyrY_avg'] = int.from_bytes([packet[25], packet[24]],
                                                                             byteorder='big',signed=True) 
-        msg['gyry_std'] =  msg['gyry_std_A']<<4 +msg['gyry_std_B']
-        msg['gyry_std'] =  (msg['gyry_std'] *1023) /63
-        msg['gyry_std'] = msg['gyry_std']*(msg['gyr_std_F']+1)
+        msg['gyrY_std'] =  msg['gyrY_std_A']<<4 +msg['gyrY_std_B']
+        msg['gyrY_std'] =  (msg['gyrY_std'] *1023) /63
+        msg['gyrY_std'] = int(msg['gyrY_std']*(msg['gyr_std_F']+1))
         
-        msg['gyrz_std_B']=packet[27]>>4
+        msg['gyrZ_std_B']=packet[27]>>4
         if (packet[27] & 8): #8: 00001000 Si es negativo, pongo todos los 0 a negativos:
             packet[27]  |= 240
         else:
             packet[27] &= 15 #si no, los quito
-        msg['gyrx_avg'] = int.from_bytes([packet[27], packet[26]],
+        msg['gyrZ_avg'] = int.from_bytes([packet[27], packet[26]],
                                                                             byteorder='big',signed=True) 
-        msg['gyrz_std'] =  (msg['gyrz_std_A']<<4) +msg['gyrz_std_B']
-        msg['gyrz_std'] =  (msg['gyrz_std'] *1023) /63
-        msg['gyrz_std'] = msg['gyrz_std']*(msg['gyr_std_F']+1)
+        msg['gyrZ_std'] =  (msg['gyrZ_std_A']<<4) +msg['gyrZ_std_B']
+        msg['gyrZ_std'] =  (msg['gyrZ_std'] *1023) /63
+        msg['gyrZ_std'] = int(msg['gyrZ_std']*(msg['gyr_std_F']+1))
         
         msg['gps_longitude'] = int.from_bytes([packet[28],packet[29],packet[30],packet[31]],
                                             byteorder='little',signed=True)  #-812345
+        msg['gps_longitude'] = msg['gps_longitude']/10000000
 
         msg['gps_latitude'] = int.from_bytes([packet[32], packet[33], packet[34],packet[35]],
                                             byteorder='little',signed=True)  #-812345
+        msg['gps_latitude'] = msg['gps_latitude']/10000000
         
         
         msg['gps_itow'] =int.from_bytes([packet[36], packet[37], packet[38],packet[39]],
@@ -423,11 +433,14 @@ def parse_meteowind(packet):
         msg['wind_direction_max']=int.from_bytes([packet[6],packet[7]],
                                                                         byteorder='little') 
         msg['wind_speed_min']=int.from_bytes([packet[8],packet[9]],
-                                                                        byteorder='little') 
+                                                                        byteorder='little')
+        msg['wind_speed_min'] = msg['wind_speed_min']/100
         msg['wind_speed_avg']=int.from_bytes([packet[10],packet[11]],
-                                                                        byteorder='little') 
+                                                                        byteorder='little')
+        msg['wind_speed_avg'] = msg['wind_speed_avg']/100
         msg['wind_speed_max']=int.from_bytes([packet[12],packet[13]],
                                                                         byteorder='little') 
+        msg['wind_speed_max'] = msg['wind_speed_max']/100
         
     else:
         msg['Error']='length msg fail'
@@ -441,8 +454,10 @@ def parse_meteothp(packet):
         
         msg['air_temperature'] = int.from_bytes([packet[2],packet[3]],
                                                                         byteorder='little',signed=True)  #-812345
+        msg['air_temperature'] = msg['air_temperature']/100
         msg['relative_humidity']=int.from_bytes([packet[4],packet[5]],
-                                                                        byteorder='little') 
+                                                                        byteorder='little')
+        msg['relative_humidity'] = msg['relative_humidity']/100
         msg['air_pressure']=int.from_bytes([packet[6],packet[7]],
                                                                         byteorder='little') 
     

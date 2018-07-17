@@ -16,10 +16,12 @@ uint8_t RH_RF95::_interruptCount = 0; // Index into _deviceForInterrupt for next
 PROGMEM static const RH_RF95::ModemConfig MODEM_CONFIG_TABLE[] =
 {
     //  1d,     1e,      26
+    //BwCr   SF CRC LowRate
     { 0x72,   0x74,    0x00}, // Bw125Cr45Sf128 (the chip default)
-    { 0x92,   0x74,    0x00}, // Bw500Cr45Sf128
-    { 0x48,   0x94,    0x00}, // Bw31_25Cr48Sf512
-    { 0x78,   0xc4,    0x00}, // Bw125Cr48Sf4096
+    { 0x92,   0x74,    0x00}, // Bw500Cr45Sf128 SF7
+    { 0x48,   0x94,    0x00}, // Bw31_25Cr48Sf512 SF9
+    { 0x78,   0xc4,    0x00}, // Bw125Cr48Sf4096 SF12
+    { 0x72,   0xc4,    0x00}, // Bw125Cr45Sf4096 default SF12
     
 };
 
@@ -102,9 +104,10 @@ bool RH_RF95::init()
 
     // Set up default configuration
     // No Sync Words in LORA mode.
-    //setModemConfig(Bw125Cr45Sf128); // Radio default
-    //    setModemConfig(Bw125Cr48Sf4096); // slow and reliable?
-    setModemConfig(Bw500Cr45Sf128); // Radio Shoaltrack
+    setModemConfig(Bw125Cr45Sf128); // Radio default SF7
+    //setModemConfig(Bw125Cr45Sf4096); // Radio default SF12
+    //setModemConfig(Bw125Cr48Sf4096); // slow and reliable?
+    //setModemConfig(Bw500Cr45Sf128); // Radio Shoaltrack
     setPreambleLength(8); // Default is 8
     // An innocuous ISM frequency, same as RF22's
     setFrequency(434.0);
