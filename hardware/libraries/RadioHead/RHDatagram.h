@@ -10,10 +10,7 @@
 
 // This is the maximum possible message size for radios supported by RadioHead.
 // Not all radios support this length, and many are much smaller
-#ifndef RH_MAX_MESSAGE_LEN
-    #define RH_MAX_MESSAGE_LEN 80
-#endif
-
+#define RH_MAX_MESSAGE_LEN 255
 
 /////////////////////////////////////////////////////////////////////
 /// \class RHDatagram RHDatagram.h <RHDatagram.h>
@@ -153,8 +150,6 @@ public:
     /// Returns the address of this node.
     /// \return The address of this node
     uint8_t         thisAddress();
-    
-     
 
 protected:
     /// The Driver we are to use

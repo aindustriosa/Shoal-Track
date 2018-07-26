@@ -2,7 +2,7 @@
 //
 // Author: Mike McCauley (mikem@airspayce.com)
 // Copyright (C) 2011 Mike McCauley
-// $Id: RHRouter.h,v 1.9 2014/08/10 20:55:17 mikem Exp $
+// $Id: RHRouter.h,v 1.10 2017/07/25 05:26:50 mikem Exp $
 
 #ifndef RHRouter_h
 #define RHRouter_h
@@ -10,7 +10,7 @@
 #include <RHReliableDatagram.h>
 
 // Default max number of hops we will route
-#define RH_DEFAULT_MAX_HOPS 15
+#define RH_DEFAULT_MAX_HOPS 30
 
 // The default size of the routing table we keep
 #define RH_ROUTING_TABLE_SIZE 10
@@ -24,10 +24,8 @@
 #define RH_ROUTER_ERROR_UNABLE_TO_DELIVER 5
 
 // This size of RH_ROUTER_MAX_MESSAGE_LEN is OK for Arduino Mega, but too big for
-// Duemilanova. Size of 50 works with the sample router programs on Duemilanova.
-#ifndef RH_ROUTER_MAX_MESSAGE_LEN
-    #define RH_ROUTER_MAX_MESSAGE_LEN (RH_MAX_MESSAGE_LEN - sizeof(RHRouter::RoutedMessageHeader))
-#endif
+// Duemilanove. Size of 50 works with the sample router programs on Duemilanove.
+#define RH_ROUTER_MAX_MESSAGE_LEN (RH_MAX_MESSAGE_LEN - sizeof(RHRouter::RoutedMessageHeader))
 //#define RH_ROUTER_MAX_MESSAGE_LEN 50
 
 // These allow us to define a simulated network topology for testing purposes

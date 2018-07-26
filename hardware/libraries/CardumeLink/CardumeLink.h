@@ -17,8 +17,6 @@
 /// \brief CardumeLink Es una libreria para enviar datos estructurados a traves de la libreria RADIOHEAD.
 /// Utiliza tecnicas de multisalto (red mallada) para enviar los datos, con deteccion automatica de rutas.
 
-#define RH_MAX_MESSAGE_LEN 80
-
 #if (CARDUME_DRIVER == CARDUME_DRIVER_RF95)
     #include <RH_RF95.h>
     #include <SPI.h>
@@ -35,7 +33,7 @@
 ////////////////////////////////////////
 //Variables de trasmision de datos RF:
 #define CARDUME_MAX_TIME_WAIT 3000 //en milisegundos
-#define CARDUME_MAX_PACKET_LEN 70
+#define CARDUME_MAX_PACKET_LEN 80
 #define CARDUME_MAX_PAYLOAD_LEN 64
 
 #define CARDUME_SIZE_HEADERHASH 12 //el tamaño del header(8) mas el HASH(4)

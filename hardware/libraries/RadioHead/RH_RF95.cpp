@@ -1,7 +1,7 @@
 // RH_RF95.cpp
 //
 // Copyright (C) 2011 Mike McCauley
-// $Id: RH_RF95.cpp,v 1.14 2017/03/04 00:59:41 mikem Exp $
+// $Id: RH_RF95.cpp,v 1.18 2018/01/06 23:50:45 mikem Exp $
 
 #include <RH_RF95.h>
 
@@ -17,11 +17,11 @@ PROGMEM static const RH_RF95::ModemConfig MODEM_CONFIG_TABLE[] =
 {
     //  1d,     1e,      26
     //BwCr   SF CRC LowRate
-    { 0x72,   0x74,    0x00}, // Bw125Cr45Sf128 (the chip default)
-    { 0x92,   0x74,    0x00}, // Bw500Cr45Sf128 SF7
-    { 0x48,   0x94,    0x00}, // Bw31_25Cr48Sf512 SF9
-    { 0x78,   0xc4,    0x00}, // Bw125Cr48Sf4096 SF12
-    { 0x72,   0xc4,    0x00}, // Bw125Cr45Sf4096 default SF12
+    { 0x72,   0x74,    0x04}, // Bw125Cr45Sf128 (the chip default), AGC enabled
+    { 0x92,   0x74,    0x04}, // Bw500Cr45Sf128, AGC enabled SF7
+    { 0x48,   0x94,    0x04}, // Bw31_25Cr48Sf512, AGC enabled SF9
+    { 0x78,   0xc4,    0x0c}, // Bw125Cr48Sf4096, AGC enabled default SF12
+    { 0x72,   0xc4,    0x00}, // Bw125Cr45Sf4096 SF12
     
 };
 
@@ -46,6 +46,9 @@ bool RH_RF95::init()
 #ifdef RH_ATTACHINTERRUPT_TAKES_PIN_NUMBER
     interruptNumber = _interruptPin;
 #endif
+
+    // Tell the low level SPI interface we will use SPI within this interrupt
+    spiUsingInterrupt(interruptNumber);
 
     // No way to check the device type :-(
     
@@ -112,7 +115,7 @@ bool RH_RF95::init()
     // An innocuous ISM frequency, same as RF22's
     setFrequency(434.0);
     // Lowish power
-    setTxPower(13);
+    setTxPower(14);
 
     return true;
 }
@@ -126,10 +129,16 @@ void RH_RF95::handleInterrupt()
 {
     // Read the interrupt register
     uint8_t irq_flags = spiRead(RH_RF95_REG_12_IRQ_FLAGS);
-    if (_mode == RHModeRx && irq_flags & (RH_RF95_RX_TIMEOUT | RH_RF95_PAYLOAD_CRC_ERROR))
+    // Read the RegHopChannel register to check if CRC presence is signalled
+    // in the header. If not it might be a stray (noise) packet.*
+    uint8_t crc_present = spiRead(RH_RF95_REG_1C_HOP_CHANNEL);
+
+    if (_mode == RHModeRx
+	&& ((irq_flags & (RH_RF95_RX_TIMEOUT | RH_RF95_PAYLOAD_CRC_ERROR))
+	    | !(crc_present & RH_RF95_RX_PAYLOAD_CRC_IS_ON)))
+//    if (_mode == RHModeRx && irq_flags & (RH_RF95_RX_TIMEOUT | RH_RF95_PAYLOAD_CRC_ERROR))
     {
 	_rxBad++;
-        _lastSNR = -20;
     }
     else if (_mode == RHModeRx && irq_flags & RH_RF95_RX_DONE)
     {
@@ -175,7 +184,9 @@ void RH_RF95::handleInterrupt()
         _cad = irq_flags & RH_RF95_CAD_DETECTED;
         setModeIdle();
     }
-    
+    // Sigh: on some processors, for some unknown reason, doing this only once does not actually
+    // clear the radio's interrupt flag. So we do it twice. Why?
+    spiWrite(RH_RF95_REG_12_IRQ_FLAGS, 0xff); // Clear all IRQ flags
     spiWrite(RH_RF95_REG_12_IRQ_FLAGS, 0xff); // Clear all IRQ flags
 }
 
@@ -333,6 +344,7 @@ void RH_RF95::setModeRx()
 {
     if (_mode != RHModeRx)
     {
+        _mode = RHModeRx;
 	spiWrite(RH_RF95_REG_01_OP_MODE, RH_RF95_MODE_RXCONTINUOUS);
 	spiWrite(RH_RF95_REG_40_DIO_MAPPING1, 0x00); // Interrupt on RxDone
 	_mode = RHModeRx;
@@ -343,6 +355,7 @@ void RH_RF95::setModeTx()
 {
     if (_mode != RHModeTx)
     {
+        _mode = RHModeTx;
 	spiWrite(RH_RF95_REG_01_OP_MODE, RH_RF95_MODE_TX);
 	spiWrite(RH_RF95_REG_40_DIO_MAPPING1, 0x40); // Interrupt on TxDone
 	_mode = RHModeTx;
@@ -451,8 +464,13 @@ int RH_RF95::frequencyError()
     int32_t freqerror = 0;
 
     // Convert 2.5 bytes (5 nibbles, 20 bits) to 32 bit signed int
-    freqerror = spiRead(RH_RF95_REG_28_FEI_MSB) << 16;
-    freqerror |= spiRead(RH_RF95_REG_29_FEI_MID) << 8;
+    // Caution: some C compilers make errors with eg:
+    // freqerror = spiRead(RH_RF95_REG_28_FEI_MSB) << 16
+    // so we go more carefully.
+    freqerror = spiRead(RH_RF95_REG_28_FEI_MSB);
+    freqerror <<= 8;
+    freqerror |= spiRead(RH_RF95_REG_29_FEI_MID);
+    freqerror <<= 8;
     freqerror |= spiRead(RH_RF95_REG_2A_FEI_LSB);
     // Sign extension into top 3 nibbles
     if (freqerror & 0x80000)

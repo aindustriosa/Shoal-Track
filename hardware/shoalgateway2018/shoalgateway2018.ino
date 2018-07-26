@@ -170,7 +170,7 @@ void loop() {
                         
           case(5):
             //bloque trasmision
-            handle_msg();
+            //handle_msg();
             cycleTimerCount = -1; // Reset case counter, will be incremented to zero before switch statement
             break;
         }

@@ -203,15 +203,10 @@ int8_t CardumeLink::get_rssi(void){
 //Miro si hay una peticion esperando mi respuesta, relleno la respuesto con la estructura
 //y obtengo el estado de la operacion
 uint8_t CardumeLink::request_handle(void) {
-  if (RHReliableDatagram::available())  {
     uint8_t packet_len;
-
-    //espero respuesta  // Now wait for a reply from the server
     packet_len = CARDUME_MAX_PACKET_LEN; //para que entre toda la trama
     
-    if (RHReliableDatagram::recvfromAckTimeout(bufferRF, 
-        &packet_len,CARDUME_MAX_TIME_WAIT,&addr_from)) {
-        
+    if (RHReliableDatagram::recvfrom(bufferRF, &packet_len, &addr_from))  {
         //compruebo que es una trama valida:
         //Serial.print("\nMAgik: ");
         //Serial.println(bufferRF[0]);
@@ -235,9 +230,9 @@ uint8_t CardumeLink::request_handle(void) {
         }
         
     }
-    return CARDUME_ERR_TRASH; //no se ha recibido nada coherente
-  }
-  return CARDUME_ERR_NODATA; // no hay nada en el buffer
+    
+    return CARDUME_ERR_NODATA; // no hay nada en el buffer
+  
 }
 
 
