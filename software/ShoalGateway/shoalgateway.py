@@ -168,11 +168,10 @@ if __name__ == "__main__":
                 
                 if pkt['payload']['msgID']==129:
                     print('FROM:{0}\tId_Code:{1}\ttime_mark:{2}\
-\tNHop:{3}\tGPS:{4},{5}\tiTow:{6}\
-\tPress:{7}\tLigth:{8}\tAx:{9}\tAy:{10}\tAcz{11}'.format(pkt['FROM'],
+\tGPS:{3},{4}\tiTow:{5}\
+\tPress:{6}\tLigth:{7}\tAx:{8}\tAy:{9}\tAcz:{10}\tBearing:{11}'.format(pkt['FROM'],
                                                                                                         pkt['Id_Code'],
                                                                                                         pkt['time_mark'],
-                                                                                                        pkt['payload']['nextHop'],
                                                                                                         pkt['payload']['gps_latitude'],
                                                                                                         pkt['payload']['gps_longitude'],
                                                                                                         pkt['payload']['gps_itow'],
@@ -180,7 +179,8 @@ if __name__ == "__main__":
                                                                                                         pkt['payload']['ligth_avg'],
                                                                                                         pkt['payload']['accX_avg'],
                                                                                                         pkt['payload']['accY_avg'],
-                                                                                                        pkt['payload']['accZ_avg']))
+                                                                                                        pkt['payload']['accZ_avg'],
+                                                                                                        pkt['payload']['bearing_avg']))
                 
                 elif pkt['payload']['msgID']==130:
                     print('FROM:{0}\tId_Code:{1}\tTime_mark:{2}\

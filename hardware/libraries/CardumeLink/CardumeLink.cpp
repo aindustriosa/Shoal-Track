@@ -150,6 +150,7 @@ uint8_t CardumeLink::_get_packet_size (uint8_t packet_id) {
 
 ////////////////////////////////////////////////////////////////////
 //envia la trama recivida a traves del RF..
+//devuelve 0 si ok, 1 si falla:
 uint8_t CardumeLink::send_Packet(uint8_t packet_id, uint8_t msg_header[],
                                                         uint8_t msg_payload[]){
     uint8_t sizeof_msg;
@@ -175,10 +176,12 @@ uint8_t CardumeLink::send_Packet(uint8_t packet_id, uint8_t msg_header[],
     }
     
     //lo envio
-    
-    return RHReliableDatagram::sendtoWait(bufferRF, 
+    if (RHReliableDatagram::sendto(bufferRF, 
                                       msg_header[CARDUME_ID_HEADER_LEN_POS],
-                                      msg_header[CARDUME_ID_HEADER_TO_POS]);
+                                      msg_header[CARDUME_ID_HEADER_TO_POS])){
+        return 0;                                      
+    }
+    return 1;
 }
 
 //obtengo el salto necesario para alcanzar el destino
@@ -197,6 +200,12 @@ int8_t CardumeLink::get_rssi(void){
     return (int8_t)RHReliableDatagram::_driver.lastRssi();
 }
 
+//devuelve 0 si hay paquete, 1 si no hay:
+bool CardumeLink::available_Packet(void) {
+    
+    return RHReliableDatagram::waitAvailableTimeout(CARDUME_TIME_SLOT_ONAIR);
+    
+}
 
 /////////////////////////////////////////////////////////////////
 ///PROCESS REQUEST FUNCTIONS

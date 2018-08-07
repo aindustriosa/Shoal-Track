@@ -31,8 +31,13 @@
 #define CARDUME_NATOUT_ADDRESS 0xff //la direccion de reenvio saliente.
 
 ////////////////////////////////////////
+//TIME ON AIR REPORT:
+//SF7: 170 ms
+//SF9: 1100ms
+//SF12 3000ms
 //Variables de trasmision de datos RF:
 #define CARDUME_MAX_TIME_WAIT 3000 //en milisegundos
+#define CARDUME_TIME_SLOT_ONAIR 250 //El tiempo del slot en milisegundos
 #define CARDUME_MAX_PACKET_LEN 80
 #define CARDUME_MAX_PAYLOAD_LEN 64
 
@@ -127,6 +132,7 @@ public:
         
         uint8_t get_nexthop(uint8_t to_address);
         int8_t get_rssi(void);
+        bool available_Packet(void);
         
         uint8_t get_header(crdm_Header_t *dataheader, bool hashcypher);
         void get_payload(void *datapayload);

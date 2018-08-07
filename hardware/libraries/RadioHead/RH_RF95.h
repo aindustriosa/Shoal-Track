@@ -19,7 +19,8 @@
 #define RH_RF95_NUM_INTERRUPTS 3
 
 // Max number of octets the LORA Rx/Tx FIFO can hold
-#define RH_RF95_FIFO_SIZE 128
+#define RH_RF95_FIFO_SIZE 128 //for clients
+//#define RH_RF95_FIFO_SIZE 255  //for gateway
 
 // This is the maximum number of bytes that can be carried by the LORA.
 // We use some for headers, keeping fewer for RadioHead messages
